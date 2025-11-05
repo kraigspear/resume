@@ -6,7 +6,8 @@
       "Bash(git remote:*)",
       "Bash(git branch:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:www.kraigspear.net)"
     ],
     "deny": [],
     "ask": []

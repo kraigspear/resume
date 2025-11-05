@@ -1,13 +1,7 @@
-# Kraig Spear - Resume & Portfolio
-
-> **View the full portfolio site at:** [kraigspear.github.io/resume](https://kraigspear.github.io/resume)
-
-This repository serves a dual purpose:
-1. **Version-controlled resume** in Markdown format
-2. **Static portfolio website** powered by Jekyll and GitHub Pages
-
-All content is written in Markdown and automatically converted to a beautiful website. For detailed project pages and portfolio content, visit the link above.
-
+---
+layout: page
+title: Resume
+permalink: /resume/
 ---
 
 # SENIOR SOFTWARE ENGINEER

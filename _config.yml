@@ -1,0 +1,29 @@
+# Site settings
+title: Kraig Spear
+description: Senior iOS Software Engineer - 20+ years of mobile development experience
+url: "https://kraigspear.github.io"
+baseurl: "/resume"
+
+# Author information
+author:
+  name: Kraig Spear
+  email: kraigspear@gmail.com
+  github: kraigspear
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Navigation
+header_pages:
+  - index.md
+  - resume.md
+  - projects.md
+
+# Exclude files from site
+exclude:
+  - .claude/
+  - .git/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
