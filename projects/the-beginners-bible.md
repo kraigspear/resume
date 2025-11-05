@@ -4,16 +4,21 @@ title: The Beginner's Bible
 permalink: /projects/the-beginners-bible/
 toc: true
 toc_label: "Contents"
+header:
+  image: /assets/images/beginners-bible-toc.png
+  teaser: /assets/images/beginners-bible-toc.png
 ---
 
 # The Beginner's Bible
 ## The #1 App of Its Kind
 
-![App Store Badge](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)
+[![App Store Badge](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)](https://apps.apple.com/us/app/the-beginners-bible/id539466818)
 
 ## Overview
 
 A sophisticated children's storybook application that transcends typical mobile book apps through advanced interactive features and substantial content scale. Featured in Apple's App Store **'New and Noteworthy'** section.
+
+The project set out to deliver a Disney-caliber interactive experience—far beyond the pan, zoom, and scale mechanics common in digital storybooks. Every page includes real interaction through embedded games, coloring activities, and puzzles, ultimately spanning well over 300 pages of content. To build at that scale, we created a bespoke StoryBook Builder tool that streamlined asset placement, interaction mapping, and narration markup so production could keep pace with the creative vision.
 
 ## The Vision
 
@@ -68,6 +73,8 @@ While most storybook apps offer 10-20 pages of basic content, The Beginner's Bib
 
 This internal tool was essential for delivering 400+ pages of content on schedule.
 
+![StoryBook Builder tooling]({{ "/assets/images/beginners-bible-storybook-builder.png" | relative_url }})
+
 ## Creative Collaboration
 
 ### Designer: Andy Anderson
@@ -96,6 +103,14 @@ Andy directed the visual direction and created the promotional video, establishi
 - **Premium children's content** on mobile
 - **Template for interactive media** on iOS
 - **Award-winning experience** for young readers
+
+## Media
+
+{% include video id="0Oq9kSBQc9c" provider="youtube" caption="Early promo video produced when only three pages were complete." %}
+
+{% include video id="1LUS1dVZJxs" provider="youtube" caption="Official Beginner's Bible app walkthrough for families." %}
+
+{% include video id="89961169" provider="vimeo" caption="Compilation of in-app games built for The Beginner's Bible." %}
 
 ## My Role
 
