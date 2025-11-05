@@ -96,7 +96,7 @@ Accomplished Senior Software Engineer with 20+ years of experience developing aw
 ## SELECTED MOBILE PROJECTS
 
 - **[Target](https://apps.apple.com/us/app/target/id297430070)** (Swift, SwiftUI, TCA) - Leading retail app serving millions of daily active users
-- **The Meijer Mobile App** (Objective-C, Swift) - Millions of downloads, 600k+ monthly active users
+- **[The Meijer Mobile App](https://apps.apple.com/us/app/meijer/id384308304)** (Objective-C, Swift) - Millions of downloads, 600k+ monthly active users
 - **shop & scan** (Swift) - Retail mobile shopping solution
 - **Team Assist** (Swift) - Enterprise team management application
 - **The Beginner's Bible** (Objective-C) - Featured in App Store 'New and Noteworthy'
