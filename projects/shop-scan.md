@@ -5,11 +5,11 @@ permalink: /projects/shop-scan/
 toc: true
 toc_label: "Contents"
 header:
-  image: /assets/images/shop-scan-iphones.png
-  teaser: /assets/images/shop-scan-iphones.png
+  image: "{{ '/assets/images/shop-scan-iphones.png' | relative_url }}"
+  teaser: "{{ '/assets/images/shop-scan-iphones.png' | relative_url }}"
 ---
 
-![shop & scan on iPhone X](/assets/images/shop-scan-iphones.png)
+![shop & scan on iPhone X]({{ "/assets/images/shop-scan-iphones.png" | relative_url }})
 
 ## Overview
 
