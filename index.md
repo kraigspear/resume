@@ -15,7 +15,7 @@ intro:
 feature_row:
   - title: "Target Mobile App"
     excerpt: "Leading retail app serving millions of daily active users. Architected modern iOS solutions using SwiftUI and TCA."
-    url: /projects/shop-scan/
+    url: /projects/target/
     btn_label: "Learn More"
     btn_class: "btn--primary"
   - title: "shop & scan"
