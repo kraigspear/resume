@@ -6,7 +6,7 @@ permalink: /resume/
 
 # SENIOR SOFTWARE ENGINEER
 
-**Mobile Technologies Specialist | iOS Architecture Leader**
+<p style="font-size: 1.2em; font-weight: bold; color: #666;">Mobile Technologies Specialist | iOS Architecture Leader</p>
 
 ## PROFESSIONAL SUMMARY
 
