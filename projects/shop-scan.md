@@ -5,14 +5,11 @@ permalink: /projects/shop-scan/
 toc: true
 toc_label: "Contents"
 header:
-  image: /resume/assets/images/shop-scan-iphones.png
-  teaser: /resume/assets/images/shop-scan-iphones.png
+  image: /assets/images/shop-scan-iphones.png
+  teaser: /assets/images/shop-scan-iphones.png
 ---
 
-# shop & scan
-## Making Checkout Superfast
-
-![shop & scan on iPhone X](/resume/assets/images/shop-scan-iphones.png)
+![shop & scan on iPhone X](/assets/images/shop-scan-iphones.png)
 
 ## Overview
 
@@ -36,7 +33,7 @@ We developed shop & scan, a mobile application that allows customers to:
 - Clip coupons they might have missed
 - Checkout instantly without waiting in line
 
-![Shopping List Feature](/resume/assets/images/shop-scan-shopping-list.png)
+![Shopping List Feature](/assets/images/shop-scan-shopping-list.png)
 
 ## Technical Highlights
 
