@@ -1,7 +1,9 @@
 ---
-layout: page
+layout: single
 title: shop & scan
 permalink: /projects/shop-scan/
+toc: true
+toc_label: "Contents"
 ---
 
 # shop & scan

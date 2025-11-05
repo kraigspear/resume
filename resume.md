@@ -1,7 +1,10 @@
 ---
-layout: page
+layout: single
 title: Resume
 permalink: /resume/
+toc: true
+toc_label: "Contents"
+toc_icon: "list"
 ---
 
 # LEAD SOFTWARE ENGINEER

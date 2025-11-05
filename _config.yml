@@ -1,24 +1,50 @@
 # Site settings
 title: Kraig Spear
-description: Senior iOS Software Engineer - 20+ years of mobile development experience
+title_separator: "|"
+subtitle: Lead iOS Software Engineer
+description: Lead iOS Software Engineer with 20+ years of mobile development experience
 url: "https://kraigspear.github.io"
 baseurl: "/resume"
+repository: "kraigspear/resume"
 
 # Author information
 author:
-  name: Kraig Spear
-  email: kraigspear@gmail.com
-  github: kraigspear
+  name: "Kraig Spear"
+  bio: "Lead iOS Software Engineer specializing in SwiftUI, TCA, and enterprise mobile architecture"
+  location: "United States"
+  email: "kraigspear@gmail.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/kraigspear"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:kraigspear@gmail.com"
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/kraigspear"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:kraigspear@gmail.com"
 
 # Navigation
-header_pages:
-  - index.md
-  - resume.md
-  - projects.md
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 # Exclude files from site
 exclude:
@@ -27,3 +53,7 @@ exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
+
+# Plugins
+plugins:
+  - jekyll-include-cache

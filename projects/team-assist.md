@@ -1,7 +1,9 @@
 ---
-layout: page
+layout: single
 title: Team Assist
 permalink: /projects/team-assist/
+toc: true
+toc_label: "Contents"
 ---
 
 # Team Assist

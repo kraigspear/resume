@@ -1,7 +1,10 @@
 ---
-layout: page
+layout: single
 title: Projects
 permalink: /projects/
+toc: true
+toc_label: "Projects"
+toc_icon: "code"
 ---
 
 # Projects

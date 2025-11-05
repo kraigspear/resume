@@ -1,7 +1,9 @@
 ---
-layout: page
+layout: single
 title: The Beginner's Bible
 permalink: /projects/the-beginners-bible/
+toc: true
+toc_label: "Contents"
 ---
 
 # The Beginner's Bible

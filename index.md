@@ -1,28 +1,41 @@
 ---
-layout: home
-title: Home
+layout: splash
+permalink: /
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: /resume/assets/images/header-bg.jpg
+  actions:
+    - label: "View Resume"
+      url: "/resume/resume/"
+    - label: "View Projects"
+      url: "/resume/projects/"
+excerpt: "Lead iOS Software Engineer with 20+ years of experience building award-winning mobile applications for Fortune 500 companies"
+intro:
+  - excerpt: 'Currently leading iOS engineering at Target Corporation, specializing in SwiftUI, The Composable Architecture (TCA), and modern iOS development practices.'
+feature_row:
+  - image_path: /resume/assets/images/target-icon.png
+    alt: "Target App"
+    title: "Target Mobile App"
+    excerpt: "Leading retail app serving millions of daily active users. Architected modern iOS solutions using SwiftUI and TCA."
+    url: "/resume/projects/shop-scan/"
+    btn_label: "Learn More"
+    btn_class: "btn--primary"
+  - image_path: /resume/assets/images/meijer-icon.png
+    alt: "shop & scan"
+    title: "shop & scan"
+    excerpt: "Innovative retail shopping solution achieving millions of downloads and 600k+ monthly active users at peak."
+    url: "/resume/projects/shop-scan/"
+    btn_label: "Learn More"
+    btn_class: "btn--primary"
+  - image_path: /resume/assets/images/bible-icon.png
+    title: "The Beginner's Bible"
+    excerpt: "Featured in App Store 'New and Noteworthy'. Over 400 pages of interactive children's content."
+    url: "/resume/projects/the-beginners-bible/"
+    btn_label: "Learn More"
+    btn_class: "btn--primary"
 ---
 
-# Kraig Spear
-## Lead iOS Software Engineer
+{% include feature_row id="intro" type="center" %}
 
-Welcome! I'm a Lead iOS Software Engineer with 20+ years of experience developing award-winning mobile applications for Fortune 500 retailers and leading technology companies.
-
-### Current Role
-**iOS Lead Engineer at Target Corporation** (2022 - Present)
-
-Leading iOS engineering for Account and Deals sections of Target's flagship mobile application, serving millions of daily active users. Expert in SwiftUI, The Composable Architecture (TCA), and Swift Concurrency.
-
-### Featured Projects
-
-- **[Target Mobile App](projects/target)** - Leading retail app with millions of daily users
-- **[shop & scan](projects/shop-scan)** - Innovative retail mobile shopping solution
-- **[The Meijer Mobile App](projects/meijer)** - Millions of downloads, 600k+ monthly active users
-
-[View All Projects](projects.md) | [View Resume](resume.md)
-
-### Contact
-
-- **Email:** kraigspear@gmail.com
-- **GitHub:** [github.com/kraigspear](https://github.com/kraigspear)
-- **Phone:** (616) 929-0622
+{% include feature_row %}
