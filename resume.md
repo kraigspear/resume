@@ -11,6 +11,8 @@ toc_icon: "list"
 
 <p style="font-size: 1.2em; font-weight: bold; color: #666;">Mobile Technologies Specialist | iOS Architecture Leader</p>
 
+[Download Resume (PDF)]({{ "/assets/resume.pdf" | relative_url }}){: .btn .btn--primary}
+
 ## PROFESSIONAL SUMMARY
 
 Accomplished Senior Software Engineer with 20+ years of experience developing award-winning mobile applications featured in Apple's App Store 'New and Noteworthy' and 'What's Hot' sections. Proven track record of leading enterprise-scale iOS development initiatives for Fortune 500 retailers, consistently maintaining 4+ star ratings. Expert in mobile architecture, team leadership, and driving technical innovation across retail, publishing, and IoT industries.

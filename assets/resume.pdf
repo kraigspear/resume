@@ -1,0 +1,385 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Length 2749 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 756 Tm
+0 -14 Td
+0 -14 Td
+(LEAD SOFTWARE ENGINEER) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Download Resume \(PDF\)) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(PROFESSIONAL SUMMARY) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Accomplished Senior Software Engineer with 20+ years of experience developing award-) Tj
+0 -14 Td
+(winning mobile applications featured in Apple's App Store 'New and Noteworthy' and 'What's) Tj
+0 -14 Td
+(Hot' sections. Proven track record of leading enterprise-scale iOS development initiatives) Tj
+0 -14 Td
+(for Fortune 500 retailers, consistently maintaining 4+ star ratings. Expert in mobile) Tj
+0 -14 Td
+(architecture, team leadership, and driving technical innovation across retail, publishing,) Tj
+0 -14 Td
+(and IoT industries.) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(TECHNICAL SKILLS) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Languages: Swift, Objective-C, C#, Objective-C++, JavaScript) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(iOS Frameworks: SwiftUI, Combine, The Composable Architecture \(TCA\), UIKit, CoreData,) Tj
+0 -14 Td
+(ObjectCapture, Swift Concurrency) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Development Tools: Xcode, Git, CI/CD, Cocos2D-X, Xamarin, Xamarin.Forms) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Specialties: Mobile Architecture \(MVVM, MVC\), Unit Testing, Accessibility Standards, IoT) Tj
+0 -14 Td
+(Integration, Team Leadership) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(PROFESSIONAL EXPERIENCE) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(iOS Lead Engineer) Tj
+0 -14 Td
+(Target Corporation | 2022 - Present) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Lead iOS engineering team for Account and Deals sections of Target's flagship mobile) Tj
+0 -14 Td
+(application, serving millions of daily active users) Tj
+0 -14 Td
+(- Architected and implemented modern iOS solutions using SwiftUI and The Composable) Tj
+0 -14 Td
+(Architecture \(TCA\) for scalable, maintainable codebase) Tj
+0 -14 Td
+(- Led team-wide adoption of Swift Concurrency, contributing to initial conversion efforts) Tj
+0 -14 Td
+(that improved app performance and code quality) Tj
+0 -14 Td
+(- Pioneered implementation of Passkeys authentication in Target iOS app, leading end-to-) Tj
+0 -14 Td
+(end integration for enhanced security and user experience) Tj
+0 -14 Td
+(- Modernized Deals section architecture, replacing legacy code with contemporary patterns) Tj
+0 -14 Td
+(and improving maintainability) Tj
+0 -14 Td
+(- Conducted technical leadership sessions on iOS performance optimization, establishing) Tj
+0 -14 Td
+(best practices for the engineering team) Tj
+0 -14 Td
+(- Implemented OAuth 2.0 authentication flows, ensuring secure and compliant user) Tj
+0 -14 Td
+(authentication mechanisms) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Senior iOS Engineer) Tj
+0 -14 Td
+(Designer Brands Inc. \(DSW\) | 2021 - 2021) Tj
+0 -14 Td
+0 -14 Td
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 3 0 R /Resources << /Font << /F1 11 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 3206 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 756 Tm
+(- Lead mobile engineering team in establishing and enforcing coding standards, pull) Tj
+0 -14 Td
+(request processes, and architectural patterns for both iOS and Android platforms) Tj
+0 -14 Td
+(- Architected and implemented modernized search functionality across Designer Brands') Tj
+0 -14 Td
+(portfolio of retail applications) Tj
+0 -14 Td
+(- Manage multi-brand mobile applications for US and Canadian markets, ensuring consistent) Tj
+0 -14 Td
+(user experience and technical excellence) Tj
+0 -14 Td
+(- Champion accessibility initiatives and modernization efforts across all mobile platforms) Tj
+0 -14 Td
+(- Develop product roadmaps incorporating cutting-edge iOS technologies including) Tj
+0 -14 Td
+(ObjectCapture and Swift Concurrency) Tj
+0 -14 Td
+(- Design and maintain enterprise applications for DSW store team members) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Principal iOS Engineer) Tj
+0 -14 Td
+(DICK'S Sporting Goods | 2020 - 2021) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Led complete rewrite of flagship DICK'S Sporting Goods and Golf Galaxy mobile) Tj
+0 -14 Td
+(applications, replacing web-based shopping with 100% native iOS implementation) Tj
+0 -14 Td
+(- Redesigned and implemented enhanced search experience for home view, significantly) Tj
+0 -14 Td
+(improving user engagement) Tj
+0 -14 Td
+(- Trained in-house development teams on SwiftUI, Combine framework, and modern iOS) Tj
+0 -14 Td
+(development best practices) Tj
+0 -14 Td
+(- Established comprehensive unit testing standards and methodologies, reducing regression) Tj
+0 -14 Td
+(bugs by 40%) Tj
+0 -14 Td
+(- Served dual role as Engineering Manager for iOS and Android teams, overseeing technical) Tj
+0 -14 Td
+(direction and team growth) Tj
+0 -14 Td
+(- Led recruitment efforts for full-time and contract engineering resources) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Senior Developer of Mobile & IoT) Tj
+0 -14 Td
+(DornerWorks | 2019 - 2020) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Led iOS and Android development for IoT projects, managing full project lifecycle from) Tj
+0 -14 Td
+(estimation through deployment) Tj
+0 -14 Td
+(- Architected mobile solutions integrating with IoT devices and cloud platforms) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(iOS Lead Architect) Tj
+0 -14 Td
+(Meijer | 2015 - 2019) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Pioneered mobile application initiatives for Meijer's retail division, establishing) Tj
+0 -14 Td
+(mobile presence from ground up) Tj
+0 -14 Td
+(- Sole iOS developer for shop & scan application, achieving millions of downloads and) Tj
+0 -14 Td
+(600k+ monthly active users) Tj
+0 -14 Td
+(- Led dramatic improvement in app ratings from 1.5 to 4.5 stars through focused quality) Tj
+0 -14 Td
+(initiatives and user feedback implementation) Tj
+0 -14 Td
+(- Spearheaded successful migration from Objective-C to Swift, modernizing entire codebase) Tj
+0 -14 Td
+(- Developed internal mobile applications supporting shop & scan ecosystem) Tj
+0 -14 Td
+(- Designed and presented architecture patterns for iOS and Android teams, significantly) Tj
+0 -14 Td
+(reducing regression bugs through improved unit testing practices) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Senior Developer for Mobile Applications & IoT) Tj
+0 -14 Td
+(BISSELL | 2017) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 11 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 2790 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 756 Tm
+0 -14 Td
+0 -14 Td
+(- Led iOS and Android development for IoT-enabled home cleaning products, managing project) Tj
+0 -14 Td
+(estimation, design, and implementation) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Senior iOS Developer) Tj
+0 -14 Td
+(Sportsman Tracker | 2015) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Led iOS development and ongoing maintenance of Sportsman Tracker application) Tj
+0 -14 Td
+(- Mentored junior developer, providing comprehensive iOS training and development guidance) Tj
+0 -14 Td
+(- Maintained consistent 5-star rating through excellent user experience and rapid issue) Tj
+0 -14 Td
+(resolution) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Senior Developer of Mobile Technologies) Tj
+0 -14 Td
+(HarperCollins Publishers | 2012 - 2015) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Directed all mobile initiatives for one of the nation's largest publishers with annual) Tj
+0 -14 Td
+(revenue in seven figures) Tj
+0 -14 Td
+(- Developed portfolio of successful mobile applications including The Beginner's Bible,) Tj
+0 -14 Td
+(Purpose Driven Life, and Common Prayer) Tj
+0 -14 Td
+(- Maintained exceptional quality standards with all internally produced apps achieving 4-5) Tj
+0 -14 Td
+(star ratings) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Senior Software Engineer) Tj
+0 -14 Td
+(X-Rite/Pantone | 2000 - 2011) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Contributed to diverse software projects across multiple business units over 11-year) Tj
+0 -14 Td
+(tenure) Tj
+0 -14 Td
+(- Developed ColorDesigner retail paint matching application) Tj
+0 -14 Td
+(- Created software for MatchStik LED-based color measurement device) Tj
+0 -14 Td
+(- Built XCQC industrial color quality assurance system) Tj
+0 -14 Td
+(- Engineered Coherix high-resolution surface measuring technology) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(SELECTED MOBILE PROJECTS) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(- Target \(Swift, SwiftUI, TCA\) - Leading retail app serving millions of daily active users) Tj
+0 -14 Td
+(- The Meijer Mobile App \(Objective-C, Swift\) - Millions of downloads, 600k+ monthly active) Tj
+0 -14 Td
+(users) Tj
+0 -14 Td
+(- shop & scan \(Swift\) - Retail mobile shopping solution) Tj
+0 -14 Td
+(- Team Assist \(Swift\) - Enterprise team management application) Tj
+0 -14 Td
+(- The Beginner's Bible \(Objective-C\) - Featured in App Store 'New and Noteworthy') Tj
+0 -14 Td
+(- SportsmanTracker \(Objective-C, Swift\) - 5-star rated outdoor activity tracker) Tj
+0 -14 Td
+(- The Daniel Plan \(Xamarin C#\) - Cross-platform health and wellness application) Tj
+0 -14 Td
+(- Halflings Memory Match \(Objective-C++, Cocos2D-X\) - Game development) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(EDUCATION) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Associate of Applied Science in Computer Programming \(Honors\)) Tj
+0 -14 Td
+(Professional Careers Institute) Tj
+0 -14 Td
+0 -14 Td
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 11 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 342 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 756 Tm
+(PATENT) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(US Patent 20070002324) Tj
+0 -14 Td
+(Systems and methods for profiling and synchronizing a fleet of color measurement) Tj
+0 -14 Td
+(instruments) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(REFERENCES) Tj
+0 -14 Td
+0 -14 Td
+0 -14 Td
+(Professional references available upon request) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 11 0 R >> >> >>
+endobj
+11 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000134 00000 n 
+0000002935 00000 n 
+0000003062 00000 n 
+0000006320 00000 n 
+0000006447 00000 n 
+0000009289 00000 n 
+0000009416 00000 n 
+0000009809 00000 n 
+0000009937 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+10008
+%%EOF
