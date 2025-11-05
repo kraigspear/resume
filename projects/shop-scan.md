@@ -33,7 +33,7 @@ We developed shop & scan, a mobile application that allows customers to:
 - Clip coupons they might have missed
 - Checkout instantly without waiting in line
 
-![Shopping List Feature](/assets/images/shop-scan-shopping-list.png)
+![Shopping List Feature]({{ "/assets/images/shop-scan-shopping-list.png" | relative_url }})
 
 ## Technical Highlights
 
