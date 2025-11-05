@@ -10,7 +10,7 @@ All content is written in Markdown and automatically converted to a beautiful we
 
 ---
 
-# SENIOR SOFTWARE ENGINEER
+# LEAD SOFTWARE ENGINEER
 
 **Mobile Technologies Specialist | iOS Architecture Leader**
 

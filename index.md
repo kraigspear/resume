@@ -4,9 +4,9 @@ title: Home
 ---
 
 # Kraig Spear
-## Senior iOS Software Engineer
+## Lead iOS Software Engineer
 
-Welcome! I'm a Senior iOS Software Engineer with 20+ years of experience developing award-winning mobile applications for Fortune 500 retailers and leading technology companies.
+Welcome! I'm a Lead iOS Software Engineer with 20+ years of experience developing award-winning mobile applications for Fortune 500 retailers and leading technology companies.
 
 ### Current Role
 **iOS Lead Engineer at Target Corporation** (2022 - Present)
