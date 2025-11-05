@@ -63,6 +63,12 @@ This was the **first Swift project released from inception** at Meijer, establis
 
 The launch of shop & scan received significant media attention as an innovative approach to modernizing the retail shopping experience.
 
+{% include video id="oJ5z24tE92Q" provider="youtube" caption="Meijer introduces shop & scan, highlighting how shoppers can check out as fast as they shop. (June 19, 2018)" %}
+
+{% include video id="Vwf7SHeUez8" provider="youtube" caption="Mike Evert demonstrates how to use the Meijer Shop & Scan app in stores." %}
+
+{% include video id="5BNfUsg5Bng" provider="youtube" caption="Shopper personas explore different ways customers use Shop & Scan inside Meijer." %}
+
 ## Technologies
 
 - **Language:** Swift
