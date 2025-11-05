@@ -10,7 +10,7 @@ repository: "kraigspear/resume"
 # Author information
 author:
   name: "Kraig Spear"
-  avatar: "/resume/assets/images/avatar.jpg"
+  avatar: "/assets/images/avatar.jpg"
   bio: "Lead iOS Software Engineer specializing in SwiftUI, TCA, and enterprise mobile architecture"
   location: "United States"
   email: "kraigspear@gmail.com"
