@@ -105,10 +105,10 @@ The success of this project reinforced the value of bringing together diverse ex
 
 ## Related Projects
 
-- [The Meijer Mobile App](meijer) - Main consumer retail application
-- [Team Assist](team-assist) - Enterprise team management tool
-- [shop & scan status](shop-scan-status) - Diagnostic and monitoring tool
+- [The Meijer Mobile App]({{ "/projects/meijer/" | relative_url }}) - Main consumer retail application
+- [Team Assist]({{ "/projects/team-assist/" | relative_url }}) - Enterprise team management tool
+- [shop & scan status]({{ "/projects/shop-scan-status/" | relative_url }}) - Diagnostic and monitoring tool
 
 ---
 
-[Back to Projects](/resume/projects) | [View Resume](/resume/resume)
+[Back to Projects]({{ "/projects/" | relative_url }}) | [View Resume]({{ "/resume/" | relative_url }})

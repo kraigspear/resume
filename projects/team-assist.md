@@ -81,10 +81,10 @@ The presentation showcased a **fully functional iOS application** rather than mo
 
 ## Related Projects
 
-- [shop & scan](shop-scan) - Main retail shopping application
-- [The Meijer Mobile App](meijer) - Consumer-facing retail app
-- [shop & scan status](shop-scan-status) - Diagnostic tool
+- [shop & scan]({{ "/projects/shop-scan/" | relative_url }}) - Main retail shopping application
+- [The Meijer Mobile App]({{ "/projects/meijer/" | relative_url }}) - Consumer-facing retail app
+- [shop & scan status]({{ "/projects/shop-scan-status/" | relative_url }}) - Diagnostic tool
 
 ---
 
-[Back to Projects](/resume/projects) | [View Resume](/resume/resume)
+[Back to Projects]({{ "/projects/" | relative_url }}) | [View Resume]({{ "/resume/" | relative_url }})

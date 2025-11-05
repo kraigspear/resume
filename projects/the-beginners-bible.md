@@ -109,9 +109,9 @@ Andy directed the visual direction and created the promotional video, establishi
 
 ## Related HarperCollins Projects
 
-- [Common Prayer](common-prayer) - Daily devotional app
-- [Purpose Driven Life](purpose-driven-life) - Bestseller companion app
+- [Common Prayer]({{ "/projects/common-prayer/" | relative_url }}) - Daily devotional app
+- [Purpose Driven Life]({{ "/projects/purpose-driven-life/" | relative_url }}) - Bestseller companion app
 
 ---
 
-[Back to Projects](/resume/projects) | [View Resume](/resume/resume)
+[Back to Projects]({{ "/projects/" | relative_url }}) | [View Resume]({{ "/resume/" | relative_url }})
