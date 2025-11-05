@@ -4,9 +4,6 @@ title: Target Mobile App
 permalink: /projects/target/
 toc: true
 toc_label: "Contents"
-header:
-  image: /assets/images/target-mobile-deals.jpeg
-  teaser: /assets/images/target-mobile-deals.jpeg
 ---
 
 ## Overview
