@@ -110,7 +110,7 @@ Professional Careers Institute
 
 ## PATENT
 
-**US Patent 20070002324**
+**[US Patent 20070002324](https://patents.google.com/patent/US20070002324)**
 Systems and methods for profiling and synchronizing a fleet of color measurement instruments
 
 ## REFERENCES
