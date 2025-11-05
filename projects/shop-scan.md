@@ -4,80 +4,110 @@ title: shop & scan
 permalink: /projects/shop-scan/
 toc: true
 toc_label: "Contents"
+header:
+  image: /resume/assets/images/shop-scan-iphones.png
+  teaser: /resume/assets/images/shop-scan-iphones.png
 ---
 
 # shop & scan
 ## Making Checkout Superfast
 
-![shop & scan App](/resume/assets/images/shop-scan-mockup.png)
+![shop & scan on iPhone X](/resume/assets/images/shop-scan-iphones.png)
 
 ## Overview
 
-shop & scan is an innovative retail mobile shopping solution developed for Meijer that enables customers to scan items as they shop and checkout quickly, helping traditional retailers compete with online shopping experiences.
+This is one of those magic moments where the right people were brought together at the right time to make something truly remarkable.
 
-## The Challenge
-
-Traditional brick-and-mortar retailers faced increasing pressure from online competitors. Meijer needed a mobile solution that leveraged their 250+ store network while providing the convenience customers expected from digital shopping experiences.
+shop & scan enabled Meijer to leverage their 250+ store locations combined with mobile technology capabilities to compete with online retailers. By allowing customers to scan items as they shop and checkout seamlessly through their mobile devices, we transformed the in-store shopping experience.
 
 ## My Role
 
-**Senior Software Engineer** (Through October 2019)
+**Senior Software Engineer** - I completed the majority of the work on this project through October 2019, serving as the sole iOS developer responsible for the entire iOS implementation.
 
-As the sole iOS developer on this project, I was responsible for the entire iOS implementation from concept to production.
+## The Problem
 
-## Technical Achievements
+Traditional brick-and-mortar retailers faced increasing pressure from online competitors who offered convenience and speed. Meijer needed a solution that would leverage their physical store network while providing the digital convenience customers expected. The challenge was to create a seamless mobile shopping experience that would make checkout as fast as shopping itself.
+
+## The Solution
+
+We developed shop & scan, a mobile application that allows customers to:
+- Scan items as they shop throughout the store
+- See real-time pricing and product information
+- Clip coupons they might have missed
+- Checkout instantly without waiting in line
+
+![Shopping List Feature](/resume/assets/images/shop-scan-shopping-list.png)
+
+## Technical Highlights
 
 ### First Internal Component Framework
-- Developed the first internally-built component framework within the Meijer Mobile App
-- Achieved 95% independence from external dependencies
-- Created reusable components that became the foundation for future mobile initiatives
+Created the first internally-developed component framework within the Meijer Mobile App that operated with **95% independence** from the core codebase. This architecture minimized risk to the main application while enabling rapid feature development and iteration.
 
-### Shopping Capability
-- First shopping functionality integrated into the Meijer Mobile App
-- Seamless scan-and-go experience for customers
-- Real-time inventory and pricing integration
+### Pioneer Shopping Capability
+Implemented the **first shopping functionality** ever integrated into the Meijer Mobile App, establishing the foundation for future e-commerce features.
 
 ### Real-Time Coupon Search
-- Implemented intelligent coupon discovery system
-- Automatic application of relevant coupons during shopping
-- Significantly improved customer savings and satisfaction
+Built an intelligent coupon discovery system that searches available coupons in real-time, helping customers clip coupons they might have missed and maximize their savings automatically.
 
-### Built with Swift
-- Ground-up development using Swift
-- Modern iOS architecture patterns (MVVM)
-- Comprehensive unit testing coverage
+### Ground-Up Swift Development
+This was the **first Swift project released from inception** at Meijer, establishing modern iOS development practices and patterns for the organization.
 
 ## Impact
 
 - **Millions of downloads** across the Meijer customer base
-- **600k+ monthly active users** at peak
-- **Improved app rating** from 1.5 to 4.5 stars
-- **Enhanced customer experience** with faster checkout times
-- **Competitive advantage** for Meijer in the digital retail space
+- **600,000+ monthly active users** at peak usage
+- **Improved app rating** from 1.5 to 4.5 stars through continuous quality improvements
+- **Enhanced customer satisfaction** with faster, more convenient checkout
+- **Competitive advantage** for Meijer in the retail space
+
+## In The News
+
+**June 19, 2018** - "Meijer is launching a new mobile shopping program that will let shoppers checkout as fast as they shop."
+
+The launch of shop & scan received significant media attention as an innovative approach to modernizing the retail shopping experience.
 
 ## Technologies
 
 - **Language:** Swift
-- **Architecture:** MVVM
-- **Frameworks:** UIKit, CoreData
-- **Integration:** REST APIs, Real-time data sync
-- **Testing:** XCTest, Unit Testing
+- **Architecture:** MVVM with custom component framework
+- **Frameworks:** UIKit, CoreData, Foundation
+- **Integration:** REST APIs, Real-time data synchronization
+- **Testing:** XCTest, Comprehensive unit testing
+- **Tools:** Xcode, Git, CI/CD pipeline
 
-## Team Recognition
+## The Team
 
-This project was a collaborative effort with contributions from:
-- Product Owner - Vision and strategy
-- Designer - User experience and interface design
-- Scrum Master - Agile process and team coordination
-- Android Developer - Cross-platform consistency
-- QA Team - Quality assurance and testing
-- IT Director - Technical leadership and support
+This project succeeded because of exceptional collaboration between talented individuals:
+
+- **Product Owner** - Defined vision and strategy
+- **Designer** - Created intuitive user experience and beautiful interface
+- **Scrum Master** - Facilitated agile process and removed blockers
+- **Android Developer** - Ensured cross-platform consistency
+- **QA Team** - Maintained quality standards through rigorous testing
+- **Director of IT & Store Experience** - Provided leadership and organizational support
+- **Senior Software Engineer (iOS)** - Complete iOS development and architecture
+
+Each person brought their expertise at exactly the right time, creating one of those rare moments where everything comes together perfectly.
+
+## Lessons Learned
+
+### Component Architecture
+Building the first independent component framework taught us valuable lessons about modular design, dependency management, and risk mitigation in large codebases. This pattern became the blueprint for future mobile initiatives.
+
+### Swift Migration
+As the first ground-up Swift project, we established coding standards, architectural patterns, and best practices that influenced the entire organization's transition from Objective-C to Swift.
+
+### User Feedback
+The dramatic rating improvement from 1.5 to 4.5 stars demonstrated the importance of continuously listening to user feedback and iterating rapidly to address concerns.
+
+### Cross-Functional Collaboration
+The success of this project reinforced the value of bringing together diverse expertise—product, design, engineering, QA, and leadership—all working toward a common goal.
 
 ## Related Projects
 
-- [The Meijer Mobile App](meijer) - Main retail application
-- [Team Assist](team-assist) - Enterprise team management
-- [shop & scan status](shop-scan-status) - Diagnostic tool
+- [The Meijer Mobile App](meijer) - Main consumer retail application
+- [Team Assist](team-assist) - Enterprise team management tool
+- [shop & scan status](shop-scan-status) - Diagnostic and monitoring tool
 
 ---
 
