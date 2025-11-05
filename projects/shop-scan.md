@@ -9,8 +9,6 @@ header:
   teaser: /assets/images/shop-scan-iphones.png
 ---
 
-![shop & scan on iPhone X]({{ "/assets/images/shop-scan-iphones.png" | relative_url }})
-
 ## Overview
 
 This is one of those magic moments where the right people were brought together at the right time to make something truly remarkable.
