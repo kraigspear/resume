@@ -60,6 +60,15 @@ Diagnostic tool for monitoring and troubleshooting shop & scan system performanc
 
 ---
 
+### [mPizza]({{ "/projects/mpizza/" | relative_url }})
+**Technologies:** Swift, UIKit, MVVM
+
+Proof-of-concept pizza ordering app built to demonstrate internal mobile development capability during Amazon/Whole Foods competitive pressure.
+
+[Learn More]({{ "/projects/mpizza/" | relative_url }})
+
+---
+
 ## IoT & Connected Devices
 
 ### [Amway Refreshments]({{ "/projects/amway-refreshments/" | relative_url }})
@@ -111,15 +120,6 @@ Weather and climate application, reborn from FastCast after years of development
 
 ---
 
-### [mPIzza]({{ "/projects/mpizza/" | relative_url }})
-**Technologies:** iOS
-
-"Whoops made the wrong App" - An experimental pizza-related application.
-
-[Learn More]({{ "/projects/mpizza/" | relative_url }})
-
----
-
 ### [StudyGateway]({{ "/projects/studygateway/" | relative_url }})
 **Technologies:** iOS
 
@@ -140,7 +140,7 @@ Mobile reader for Seth Godin's influential marketing blog.
 
 ## Additional Projects
 
-For a complete list of projects and contributions, see the [Selected Mobile Projects section of my resume](resume#selected-mobile-projects).
+For a complete list of projects and contributions, see the [Selected Mobile Projects section of my resume]({{ "/resume/" | relative_url }}#selected-mobile-projects).
 
 ---
 

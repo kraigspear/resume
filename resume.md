@@ -43,12 +43,12 @@ Accomplished Senior Software Engineer with 20+ years of experience developing aw
 ### Senior iOS Engineer
 **Designer Brands Inc. (DSW)** | 2021 - 2021
 
-- Lead mobile engineering team in establishing and enforcing coding standards, pull request processes, and architectural patterns for both iOS and Android platforms
+- Led mobile engineering team in establishing and enforcing coding standards, pull request processes, and architectural patterns for both iOS and Android platforms
 - Architected and implemented modernized search functionality across Designer Brands' portfolio of retail applications
-- Manage multi-brand mobile applications for US and Canadian markets, ensuring consistent user experience and technical excellence
-- Champion accessibility initiatives and modernization efforts across all mobile platforms
-- Develop product roadmaps incorporating cutting-edge iOS technologies including ObjectCapture and Swift Concurrency
-- Design and maintain enterprise applications for DSW store team members
+- Managed multi-brand mobile applications for US and Canadian markets, ensuring consistent user experience and technical excellence
+- Championed accessibility initiatives and modernization efforts across all mobile platforms
+- Developed product roadmaps incorporating cutting-edge iOS technologies including ObjectCapture and Swift Concurrency
+- Designed and maintained enterprise applications for DSW store team members
 
 ### Principal iOS Engineer
 **DICK'S Sporting Goods** | 2020 - 2021
