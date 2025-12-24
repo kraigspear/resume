@@ -26,11 +26,11 @@ The Target mobile app is a flagship retail experience that supports tens of mill
 - Instrumented analytics and experimentation hooks that allow merchandising teams to iterate on placement and merchandising strategies safely.
 - Collaborated with data science partners to surface the most relevant deals within milliseconds, even under heavy traffic during peak retail events.
 
-![Target Deals screen]({{ "/assets/images/target-mobile-deals.jpeg" | relative_url }}){: .align-center}
+![Target Deals screen]({{ "/assets/images/target-mobile-deals.jpeg" | relative_url }}){: .align-center .responsive-media}
 
 ## Product Demo
 
-<video controls playsinline poster="{{ '/assets/images/target-mobile-deals.jpeg' | relative_url }}" class="border">
+<video controls playsinline poster="{{ '/assets/images/target-mobile-deals.jpeg' | relative_url }}" class="border responsive-media">
   <source src="{{ '/assets/images/target-video-demo.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag. You can <a href="{{ '/assets/images/target-video-demo.mp4' | relative_url }}">download the video</a> instead.
 </video>

@@ -12,7 +12,7 @@ header:
 # The Beginner's Bible
 ## The #1 App of Its Kind
 
-[![App Store Badge](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)](https://apps.apple.com/us/app/the-beginners-bible/id539466818)
+[![App Store Badge](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg){: .responsive-media}](https://apps.apple.com/us/app/the-beginners-bible/id539466818)
 
 ## Overview
 
@@ -73,7 +73,7 @@ While most storybook apps offer 10-20 pages of basic content, The Beginner's Bib
 
 This internal tool was essential for delivering 400+ pages of content on schedule.
 
-![StoryBook Builder tooling]({{ "/assets/images/beginners-bible-storybook-builder.png" | relative_url }})
+![StoryBook Builder tooling]({{ "/assets/images/beginners-bible-storybook-builder.png" | relative_url }}){: .responsive-media}
 
 ## Creative Collaboration
 
