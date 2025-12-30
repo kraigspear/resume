@@ -31,15 +31,6 @@ Innovative retail mobile shopping solution for Meijer enabling scan-and-go check
 
 ---
 
-### [The Meijer Mobile App](https://apps.apple.com/us/app/meijer/id384308304)
-**Technologies:** Objective-C, Swift
-
-Main retail application for Meijer with millions of downloads. Improved rating from 1.5 to 4.5 stars through quality initiatives and Swift migration.
-
-[Learn More]({{ "/projects/meijer/" | relative_url }})
-
----
-
 ## Enterprise & Internal Tools
 
 ### [Team Assist]({{ "/projects/team-assist/" | relative_url }})
@@ -72,9 +63,9 @@ Proof-of-concept pizza ordering app built to demonstrate internal mobile develop
 ## IoT & Connected Devices
 
 ### [Amway Refreshments]({{ "/projects/amway-refreshments/" | relative_url }})
-**Technologies:** iOS, IoT Integration
+**Technologies:** Swift, Realm Database, IoT Integration
 
-Mobile application for IoT-enabled refreshment systems.
+iOS application for Uber drivers to generate leads for Amway. Built with Swift and Realm, achieving hundreds of hours of crash-free operation. Field-tested in the United Kingdom.
 
 [Learn More]({{ "/projects/amway-refreshments/" | relative_url }})
 
@@ -88,53 +79,6 @@ Mobile application for IoT-enabled refreshment systems.
 The #1 children's Bible app featured in App Store 'New and Noteworthy'. Developed for HarperCollins Publishers.
 
 [Learn More]({{ "/projects/the-beginners-bible/" | relative_url }})
-
----
-
-### [Common Prayer]({{ "/projects/common-prayer/" | relative_url }})
-**Technologies:** Objective-C
-
-Daily prayer and devotional application for HarperCollins Christian Publishing.
-
-[Learn More]({{ "/projects/common-prayer/" | relative_url }})
-
----
-
-### [Purpose Driven Life]({{ "/projects/purpose-driven-life/" | relative_url }})
-**Technologies:** Objective-C, Xamarin
-
-Mobile companion to the best-selling book by Rick Warren.
-
-[Learn More]({{ "/projects/purpose-driven-life/" | relative_url }})
-
----
-
-## Personal & Indie Projects
-
-### [Klimate]({{ "/projects/klimate/" | relative_url }})
-**Technologies:** Swift (Reboot of FastCast)
-
-Weather and climate application, reborn from FastCast after years of development.
-
-[Learn More]({{ "/projects/klimate/" | relative_url }})
-
----
-
-### [StudyGateway]({{ "/projects/studygateway/" | relative_url }})
-**Technologies:** iOS
-
-Educational application for student learning and study management.
-
-[Learn More]({{ "/projects/studygateway/" | relative_url }})
-
----
-
-### [Seth Godin's Blog]({{ "/projects/seth-godins-blog/" | relative_url }})
-**Technologies:** iOS
-
-Mobile reader for Seth Godin's influential marketing blog.
-
-[Learn More]({{ "/projects/seth-godins-blog/" | relative_url }})
 
 ---
 
