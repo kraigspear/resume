@@ -7,8 +7,6 @@ toc_label: "Contents"
 toc_icon: "list"
 ---
 
-# Amway Refreshments
-
 **Technologies:** Swift 2.x, Realm Database, IoT Integration
 
 An iOS application developed to help Uber drivers generate leads for Amway, built in collaboration with Andy Anderson (previously worked together on HarperCollins projects and the Seth Godin App).

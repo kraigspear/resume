@@ -6,8 +6,7 @@ toc: true
 toc_label: "Contents"
 ---
 
-# mPizza
-## Proving Internal Capability
+*Proving Internal Capability*
 
 ## Overview
 

@@ -6,9 +6,6 @@ toc: true
 toc_label: "Contents"
 ---
 
-# Team Assist
-## Apple Enterprise Workshop
-
 ## Overview
 
 Team Assist is an enterprise iOS application developed for Meijer store teams, created as part of Apple's prestigious Enterprise Development Workshop in Cupertino. The application addresses theft concerns and asset protection challenges in retail environments by leveraging mobile technology for store floor operations.
@@ -82,7 +79,6 @@ The presentation showcased a **fully functional iOS application** rather than mo
 ## Related Projects
 
 - [shop & scan]({{ "/projects/shop-scan/" | relative_url }}) - Main retail shopping application
-- [The Meijer Mobile App]({{ "/projects/meijer/" | relative_url }}) - Consumer-facing retail app
 - [shop & scan status]({{ "/projects/shop-scan-status/" | relative_url }}) - Diagnostic tool
 
 ---

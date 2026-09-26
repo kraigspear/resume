@@ -41,7 +41,7 @@ Accomplished Senior Software Engineer with 20+ years of experience developing aw
 - Implemented OAuth 2.0 authentication flows, ensuring secure and compliant user authentication mechanisms
 
 ### Senior iOS Engineer
-**Designer Brands Inc. (DSW)** | 2021 - 2021
+**Designer Brands Inc. (DSW)** | 2021
 
 - Led mobile engineering team in establishing and enforcing coding standards, pull request processes, and architectural patterns for both iOS and Android platforms
 - Architected and implemented modernized search functionality across Designer Brands' portfolio of retail applications
