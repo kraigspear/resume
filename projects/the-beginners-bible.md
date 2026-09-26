@@ -5,12 +5,11 @@ permalink: /projects/the-beginners-bible/
 toc: true
 toc_label: "Contents"
 header:
-  image: /assets/images/beginners-bible-toc.png
-  teaser: /assets/images/beginners-bible-toc.png
+  image: /assets/images/beginners-bible-toc.jpg
+  teaser: /assets/images/beginners-bible-toc.jpg
 ---
 
-# The Beginner's Bible
-## The #1 App of Its Kind
+*The #1 App of Its Kind*
 
 [![App Store Badge](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg){: .responsive-media}](https://apps.apple.com/us/app/the-beginners-bible/id539466818)
 
@@ -73,7 +72,7 @@ While most storybook apps offer 10-20 pages of basic content, The Beginner's Bib
 
 This internal tool was essential for delivering 400+ pages of content on schedule.
 
-![StoryBook Builder tooling]({{ "/assets/images/beginners-bible-storybook-builder.png" | relative_url }}){: .responsive-media}
+![StoryBook Builder tooling]({{ "/assets/images/beginners-bible-storybook-builder.jpg" | relative_url }}){: .responsive-media}
 
 ## Creative Collaboration
 
@@ -121,11 +120,6 @@ Andy directed the visual direction and created the promotional video, establishi
 - Technical architecture and optimization
 - App Store submission and updates
 - Collaboration with design and editorial teams
-
-## Related HarperCollins Projects
-
-- [Common Prayer]({{ "/projects/common-prayer/" | relative_url }}) - Daily devotional app
-- [Purpose Driven Life]({{ "/projects/purpose-driven-life/" | relative_url }}) - Bestseller companion app
 
 ---
 

@@ -5,8 +5,8 @@ permalink: /projects/shop-scan/
 toc: true
 toc_label: "Contents"
 header:
-  image: /assets/images/shop-scan-iphones.png
-  teaser: /assets/images/shop-scan-iphones.png
+  image: /assets/images/shop-scan-iphones.jpg
+  teaser: /assets/images/shop-scan-iphones.jpg
 ---
 
 ## Overview
@@ -106,7 +106,6 @@ The success of this project reinforced the value of bringing together diverse ex
 
 ## Related Projects
 
-- [The Meijer Mobile App]({{ "/projects/meijer/" | relative_url }}) - Main consumer retail application
 - [Team Assist]({{ "/projects/team-assist/" | relative_url }}) - Enterprise team management tool
 - [shop & scan status]({{ "/projects/shop-scan-status/" | relative_url }}) - Diagnostic and monitoring tool
 

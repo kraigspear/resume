@@ -7,8 +7,6 @@ toc_label: "Contents"
 toc_icon: "list"
 ---
 
-# shop & scan status
-
 **Technologies:** Swift, Service API Integration
 
 A diagnostic utility app created during Meijer's hackathon program to streamline troubleshooting for the shop & scan application.
