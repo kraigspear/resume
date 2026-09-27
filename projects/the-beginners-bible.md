@@ -17,7 +17,7 @@ header:
 
 A sophisticated children's storybook application that transcends typical mobile book apps through advanced interactive features and substantial content scale. Featured in Apple's App Store **'New and Noteworthy'** section.
 
-The project set out to deliver a Disney-caliber interactive experience—far beyond the pan, zoom, and scale mechanics common in digital storybooks. Every page includes real interaction through embedded games, coloring activities, and puzzles, ultimately spanning well over 300 pages of content. To build at that scale, we created a bespoke StoryBook Builder tool that streamlined asset placement, interaction mapping, and narration markup so production could keep pace with the creative vision.
+The project set out to deliver a Disney-caliber interactive experience—far beyond the pan, zoom, and scale mechanics common in digital storybooks. Every page includes real interaction through embedded games, coloring activities, and puzzles, ultimately spanning more than 400 pages of content. To build at that scale, we created a bespoke StoryBook Builder tool that streamlined asset placement, interaction mapping, and narration markup so production could keep pace with the creative vision.
 
 ## The Vision
 

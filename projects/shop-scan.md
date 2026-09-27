@@ -17,7 +17,7 @@ shop & scan enabled Meijer to leverage their 250+ store locations combined with 
 
 ## My Role
 
-**Senior Software Engineer** - I completed the majority of the work on this project through October 2019, serving as the sole iOS developer responsible for the entire iOS implementation.
+**iOS Lead Architect** - I completed the majority of the work on this project through October 2019, serving as the sole iOS developer responsible for the entire iOS implementation.
 
 ## The Problem
 
@@ -86,7 +86,7 @@ This project succeeded because of exceptional collaboration between talented ind
 - **Android Developer** - Ensured cross-platform consistency
 - **QA Team** - Maintained quality standards through rigorous testing
 - **Director of IT & Store Experience** - Provided leadership and organizational support
-- **Senior Software Engineer (iOS)** - Complete iOS development and architecture
+- **iOS Lead Architect** - Complete iOS development and architecture
 
 Each person brought their expertise at exactly the right time, creating one of those rare moments where everything comes together perfectly.
 
@@ -106,7 +106,7 @@ The success of this project reinforced the value of bringing together diverse ex
 
 ## Related Projects
 
-- [Team Assist]({{ "/projects/team-assist/" | relative_url }}) - Enterprise team management tool
+- [Team Assist]({{ "/projects/team-assist/" | relative_url }}) - Enterprise asset protection app
 - [shop & scan status]({{ "/projects/shop-scan-status/" | relative_url }}) - Diagnostic and monitoring tool
 
 ---

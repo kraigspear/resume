@@ -9,7 +9,7 @@ toc_icon: "code"
 
 # Projects
 
-A showcase of mobile applications and software projects spanning 20+ years of development experience.
+A showcase of mobile applications and software projects spanning 25+ years of development experience.
 
 ## Current & Recent Projects
 
@@ -25,7 +25,7 @@ Leading retail app serving millions of daily active users. Led development of Ac
 ### [shop & scan]({{ "/projects/shop-scan/" | relative_url }})
 **Technologies:** Swift, UIKit, MVVM
 
-Innovative retail mobile shopping solution for Meijer enabling scan-and-go checkout. Achieved millions of downloads and 600k+ monthly active users.
+Innovative retail mobile shopping solution for Meijer enabling scan-and-go checkout. Reached 600K+ monthly active users at peak.
 
 [Learn More]({{ "/projects/shop-scan/" | relative_url }})
 
@@ -36,7 +36,7 @@ Innovative retail mobile shopping solution for Meijer enabling scan-and-go check
 ### [Team Assist]({{ "/projects/team-assist/" | relative_url }})
 **Technologies:** Swift
 
-Enterprise team management application developed through Apple Enterprise Workshop for Meijer store teams.
+Enterprise asset protection app developed through Apple's Enterprise Development Workshop for Meijer store teams.
 
 [Learn More]({{ "/projects/team-assist/" | relative_url }})
 
@@ -84,7 +84,7 @@ The #1 children's Bible app featured in App Store 'New and Noteworthy'. Develope
 
 ## Additional Projects
 
-For a complete list of projects and contributions, see the [Selected Mobile Projects section of my resume]({{ "/resume/" | relative_url }}#selected-mobile-projects).
+For my full work history, see my [resume]({{ "/resume/" | relative_url }}).
 
 ---
 

@@ -9,7 +9,7 @@ header:
       url: /resume/
     - label: "View Projects"
       url: /projects/
-excerpt: "Lead iOS Software Engineer with 20+ years of experience building award-winning mobile applications for Fortune 500 companies"
+excerpt: "Lead iOS Engineer with 25+ years of software experience, including 14+ years building iOS apps for Fortune 500 retailers"
 intro:
   - excerpt: 'Currently leading iOS engineering at Target Corporation, specializing in SwiftUI, The Composable Architecture (TCA), and modern iOS development practices.'
 feature_row:
@@ -19,7 +19,7 @@ feature_row:
     btn_label: "Learn More"
     btn_class: "btn--primary"
   - title: "shop & scan"
-    excerpt: "Innovative retail shopping solution achieving millions of downloads and 600k+ monthly active users at peak."
+    excerpt: "Scan-and-go checkout for 250+ Meijer stores, reaching 600K+ monthly active users at peak."
     url: /projects/shop-scan/
     btn_label: "Learn More"
     btn_class: "btn--primary"

@@ -1,8 +1,8 @@
 # Site settings
 title: Kraig Spear
 title_separator: "|"
-subtitle: Lead iOS Software Engineer
-description: Lead iOS Software Engineer with 20+ years of mobile development experience
+subtitle: Lead iOS Engineer
+description: Lead iOS Engineer with 25+ years of software experience, including 14+ years building iOS apps
 url: "https://kraigspear.github.io"
 baseurl: "/resume"
 repository: "kraigspear/resume"
@@ -11,7 +11,7 @@ repository: "kraigspear/resume"
 author:
   name: "Kraig Spear"
   avatar: "/assets/images/avatar.jpg"
-  bio: "Lead iOS Software Engineer specializing in SwiftUI, TCA, and enterprise mobile architecture"
+  bio: "Lead iOS Engineer specializing in SwiftUI, TCA, and enterprise mobile architecture"
   location: "United States"
   email: "kraigspear@gmail.com"
   links:
