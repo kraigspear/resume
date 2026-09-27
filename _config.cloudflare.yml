@@ -1,4 +1,4 @@
-# Overrides for the Cloudflare Pages build that serves kraigspear.net.
+# Overrides for the Cloudflare build that serves kraigspear.net.
 # Build command: bundle exec jekyll build --config _config.yml,_config.cloudflare.yml
 url: "https://kraigspear.net"
 baseurl: ""
@@ -8,6 +8,6 @@ plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
 
-# Cloudflare Pages reads redirect rules from _redirects in the output root.
+# Cloudflare reads redirect rules from _redirects in the output root.
 include:
   - _redirects

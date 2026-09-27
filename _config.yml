@@ -54,6 +54,7 @@ exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
+  - wrangler.jsonc
 
 # Plugins
 plugins:
