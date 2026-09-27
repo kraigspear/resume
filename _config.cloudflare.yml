@@ -1,0 +1,13 @@
+# Overrides for the Cloudflare Pages build that serves kraigspear.net.
+# Build command: bundle exec jekyll build --config _config.yml,_config.cloudflare.yml
+url: "https://kraigspear.net"
+baseurl: ""
+
+# GitHub Pages loads remote themes on its own; other hosts need the plugin listed.
+plugins:
+  - jekyll-include-cache
+  - jekyll-remote-theme
+
+# Cloudflare Pages reads redirect rules from _redirects in the output root.
+include:
+  - _redirects
