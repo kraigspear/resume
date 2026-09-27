@@ -1,4 +1,4 @@
-# Cloudflare Pages build. Uses the GitHub Pages gem set so both hosts render the site the same way.
+# Cloudflare build. Uses the GitHub Pages gem set so both hosts render the site the same way.
 source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
