@@ -82,6 +82,48 @@ The #1 children's Bible app featured in App Store 'New and Noteworthy'. Develope
 
 ---
 
+### [The Purpose Driven Life]({{ "/projects/the-purpose-driven-life/" | relative_url }})
+
+An app for Rick Warren's bestselling book, with daily readings, videos, bookmarks, and notes. Developed for HarperCollins Publishers.
+
+[Learn More]({{ "/projects/the-purpose-driven-life/" | relative_url }})
+
+---
+
+### [Common Prayer]({{ "/projects/common-prayer/" | relative_url }})
+
+A daily prayer app with morning, midday, and evening prayers. Developed for HarperCollins Publishers.
+
+[Learn More]({{ "/projects/common-prayer/" | relative_url }})
+
+---
+
+### [StudyGateway]({{ "/projects/studygateway/" | relative_url }})
+
+A video Bible-study app for browsing study series, following session guides, and watching session videos.
+
+[Learn More]({{ "/projects/studygateway/" | relative_url }})
+
+---
+
+### [Seth Godin's Blog]({{ "/projects/seth-godins-blog/" | relative_url }})
+
+An iPhone and iPad app for reading Seth Godin's blog.
+
+[Learn More]({{ "/projects/seth-godins-blog/" | relative_url }})
+
+---
+
+## Personal Projects
+
+### [FastCast]({{ "/projects/fastcast/" | relative_url }})
+
+A weather app, now being reborn as Klimate.
+
+[Learn More]({{ "/projects/fastcast/" | relative_url }})
+
+---
+
 ## Additional Projects
 
 For my full work history, see my [resume]({{ "/resume/" | relative_url }}).
