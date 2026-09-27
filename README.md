@@ -14,7 +14,8 @@ The site is moving from Squarespace to a Cloudflare Worker that serves the built
 
 Workers Builds settings:
 
-- **Build command:** `bundle install && bundle exec jekyll build --config _config.yml,_config.cloudflare.yml`
+- **Build command:** `LC_ALL=C.UTF-8 bundle exec jekyll build --config _config.yml,_config.cloudflare.yml`
+  (the build image has no UTF-8 locale, and the theme's Sass fails without one; Cloudflare runs `bundle install` before this)
 - **Deploy command:** `npx wrangler deploy`
 - **Preview command:** `npx wrangler preview`
 
