@@ -18,23 +18,23 @@ OUTPUT = ROOT / "assets" / "resume.pdf"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 NAME = "Kraig Spear"
-CONTACT = "kraigspear@gmail.com · github.com/kraigspear"
+CONTACT = "kraigspear@gmail.com · github.com/kraigspear · kraigspear.github.io/resume"
 
 CSS = """
-@page { size: Letter; margin: 0.6in 0.7in; }
-body { font: 10.5pt/1.35 Helvetica, Arial, sans-serif; color: #222; }
+@page { size: Letter; margin: 0.5in 0.6in; }
+body { font: 10pt/1.3 Helvetica, Arial, sans-serif; color: #222; }
 h1 { font-size: 22pt; margin: 0; letter-spacing: 0.5px; }
 .contact { color: #555; margin: 2pt 0 4pt; }
 .headline { font-size: 13pt; font-weight: bold; margin: 8pt 0 0; letter-spacing: 0.5px; }
 .subtitle { font-weight: bold; color: #555; margin: 0 0 10pt; }
 h2 { font-size: 11.5pt; border-bottom: 1px solid #999; padding-bottom: 2pt;
-     margin: 14pt 0 6pt; letter-spacing: 0.5px; }
-h3 { font-size: 10.5pt; margin: 9pt 0 0; }
+     margin: 12pt 0 5pt; letter-spacing: 0.5px; }
+h3 { font-size: 10.5pt; margin: 8pt 0 0; }
 p { margin: 2pt 0 4pt; }
 ul { margin: 2pt 0 4pt; padding-left: 16pt; }
 li { margin: 0 0 2pt; }
 a { color: #1a4d8f; text-decoration: none; }
-h3, h3 + p { page-break-after: avoid; }
+h2, h3, h3 + p { page-break-after: avoid; }
 li, p { page-break-inside: avoid; }
 """
 
