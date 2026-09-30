@@ -1,4 +1,4 @@
-# Old Squarespace URLs on kraigspear.net, kept working after the move to Cloudflare.
+# Legacy pages and retained media. See ../ROUTES.md.
 /s/Resume-2020.pdf    /assets/resume.pdf                    301
 /home                 /                                     301
 /blog                 /                                     301
@@ -13,9 +13,6 @@
 /purpose-drive-life   /projects/the-purpose-driven-life/    301
 /fastcast             /projects/fastcast/                   301
 /studygateway         /projects/studygateway/               301
-/studygateway/*       /projects/studygateway/               301
-
-# Trailing-slash variants of old Squarespace pages.
 /home/ / 301
 /blog/ / 301
 /shop-scan/ /projects/shop-scan/ 301
@@ -29,12 +26,39 @@
 /purpose-drive-life/ /projects/the-purpose-driven-life/ 301
 /fastcast/ /projects/fastcast/ 301
 /studygateway/ /projects/studygateway/ 301
-
-# GitHub Pages base-path references arriving on the new host.
 /resume/projects /projects/ 301
 /resume/projects/ /projects/ 301
-/resume/projects/* /projects/:splat 301
-/resume/assets/* /assets/:splat 301
+/resume/assets/resume.pdf /assets/resume.pdf 301
 /resume/resume /resume/ 301
 /resume/resume/ /resume/ 301
 /resume/open-source-contributions/ /open-source-contributions/ 301
+/assets/images/shop-scan-shopping-list.png /images/shop-scan-shopping-list.png 301
+/resume/assets/images/shop-scan-shopping-list.png /images/shop-scan-shopping-list.png 301
+/assets/images/fastcast-iphone.png /images/fastcast-iphone.png 301
+/resume/assets/images/fastcast-iphone.png /images/fastcast-iphone.png 301
+/assets/images/studygateway-series.jpg /images/studygateway-series.jpg 301
+/resume/assets/images/studygateway-series.jpg /images/studygateway-series.jpg 301
+/assets/images/purpose-driven-life-iphones.png /images/purpose-driven-life-iphones.png 301
+/resume/assets/images/purpose-driven-life-iphones.png /images/purpose-driven-life-iphones.png 301
+/assets/images/seth-godin-iphones.png /images/seth-godin-iphones.png 301
+/resume/assets/images/seth-godin-iphones.png /images/seth-godin-iphones.png 301
+/assets/images/studygateway-home.jpg /images/studygateway-home.jpg 301
+/resume/assets/images/studygateway-home.jpg /images/studygateway-home.jpg 301
+/assets/images/seth-godin-ipad-iphone.jpg /images/seth-godin-ipad-iphone.jpg 301
+/resume/assets/images/seth-godin-ipad-iphone.jpg /images/seth-godin-ipad-iphone.jpg 301
+/assets/images/studygateway-author.jpg /images/studygateway-author.jpg 301
+/resume/assets/images/studygateway-author.jpg /images/studygateway-author.jpg 301
+/assets/images/common-prayer-iphones.png /images/common-prayer-iphones.png 301
+/resume/assets/images/common-prayer-iphones.png /images/common-prayer-iphones.png 301
+/assets/images/studygateway-series-author.jpg /images/studygateway-series-author.jpg 301
+/resume/assets/images/studygateway-series-author.jpg /images/studygateway-series-author.jpg 301
+/assets/images/shop-scan-iphones.jpg /images/shop-scan-iphones.jpg 301
+/resume/assets/images/shop-scan-iphones.jpg /images/shop-scan-iphones.jpg 301
+/assets/images/studygateway-sessions.jpg /images/studygateway-sessions.jpg 301
+/resume/assets/images/studygateway-sessions.jpg /images/studygateway-sessions.jpg 301
+/assets/images/beginners-bible-toc.jpg /images/beginners-bible.jpg 301
+/resume/assets/images/beginners-bible-toc.jpg /images/beginners-bible.jpg 301
+/assets/images/beginners-bible-storybook-builder.jpg /images/storybook-builder.jpg 301
+/resume/assets/images/beginners-bible-storybook-builder.jpg /images/storybook-builder.jpg 301
+/studygateway/*       /projects/studygateway/               301
+/resume/projects/* /projects/:splat 301

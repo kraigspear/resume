@@ -69,3 +69,11 @@ test('migrated pages have working internal links and assets on desktop and mobil
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/projects\/klimate\/?$/);
 });
+
+test('legacy image URLs preserve retained project media', async ({ request }) => {
+  for (const path of ['/assets/images/fastcast-iphone.png', '/resume/assets/images/fastcast-iphone.png', '/assets/images/beginners-bible-toc.jpg', '/resume/assets/images/beginners-bible-storybook-builder.jpg']) {
+    const response = await request.get(path);
+    expect(response.status(), path).toBe(200);
+    expect(response.headers()['content-type'], path).toMatch(/^image\//);
+  }
+});

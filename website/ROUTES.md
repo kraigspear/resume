@@ -30,7 +30,11 @@ Only `website/dist/` is public output. This inventory stays in the source tree.
 All original Squarespace rules from the root `_redirects` are retained in
 `public/_redirects`. Explicit trailing-slash aliases and specific GitHub Pages
 base-path aliases are added; `/resume/` itself remains the resume page.
-The root production `_redirects` is unchanged.
+The root production `_redirects` is unchanged. Retained image URLs have explicit
+mappings for both root and GitHub-prefixed paths, including renamed featured
+images. The legacy PDF alias is exact, rather than a broad assets wildcard.
+Target media remains withheld as documented below; the former avatar is not
+part of the retained project media.
 
 | Incoming path | Destination | Status |
 | --- | --- | --- |
@@ -48,7 +52,6 @@ The root production `_redirects` is unchanged.
 | `/purpose-drive-life` | `/projects/the-purpose-driven-life/` | 301 |
 | `/fastcast` | `/projects/fastcast/` | 301 |
 | `/studygateway` | `/projects/studygateway/` | 301 |
-| `/studygateway/*` | `/projects/studygateway/` | 301 |
 | `/home/` | `/` | 301 |
 | `/blog/` | `/` | 301 |
 | `/shop-scan/` | `/projects/shop-scan/` | 301 |
@@ -64,11 +67,40 @@ The root production `_redirects` is unchanged.
 | `/studygateway/` | `/projects/studygateway/` | 301 |
 | `/resume/projects` | `/projects/` | 301 |
 | `/resume/projects/` | `/projects/` | 301 |
-| `/resume/projects/*` | `/projects/:splat` | 301 |
-| `/resume/assets/*` | `/assets/:splat` | 301 |
+| `/resume/assets/resume.pdf` | `/assets/resume.pdf` | 301 |
 | `/resume/resume` | `/resume/` | 301 |
 | `/resume/resume/` | `/resume/` | 301 |
 | `/resume/open-source-contributions/` | `/open-source-contributions/` | 301 |
+| `/assets/images/shop-scan-shopping-list.png` | `/images/shop-scan-shopping-list.png` | 301 |
+| `/resume/assets/images/shop-scan-shopping-list.png` | `/images/shop-scan-shopping-list.png` | 301 |
+| `/assets/images/fastcast-iphone.png` | `/images/fastcast-iphone.png` | 301 |
+| `/resume/assets/images/fastcast-iphone.png` | `/images/fastcast-iphone.png` | 301 |
+| `/assets/images/studygateway-series.jpg` | `/images/studygateway-series.jpg` | 301 |
+| `/resume/assets/images/studygateway-series.jpg` | `/images/studygateway-series.jpg` | 301 |
+| `/assets/images/purpose-driven-life-iphones.png` | `/images/purpose-driven-life-iphones.png` | 301 |
+| `/resume/assets/images/purpose-driven-life-iphones.png` | `/images/purpose-driven-life-iphones.png` | 301 |
+| `/assets/images/seth-godin-iphones.png` | `/images/seth-godin-iphones.png` | 301 |
+| `/resume/assets/images/seth-godin-iphones.png` | `/images/seth-godin-iphones.png` | 301 |
+| `/assets/images/studygateway-home.jpg` | `/images/studygateway-home.jpg` | 301 |
+| `/resume/assets/images/studygateway-home.jpg` | `/images/studygateway-home.jpg` | 301 |
+| `/assets/images/seth-godin-ipad-iphone.jpg` | `/images/seth-godin-ipad-iphone.jpg` | 301 |
+| `/resume/assets/images/seth-godin-ipad-iphone.jpg` | `/images/seth-godin-ipad-iphone.jpg` | 301 |
+| `/assets/images/studygateway-author.jpg` | `/images/studygateway-author.jpg` | 301 |
+| `/resume/assets/images/studygateway-author.jpg` | `/images/studygateway-author.jpg` | 301 |
+| `/assets/images/common-prayer-iphones.png` | `/images/common-prayer-iphones.png` | 301 |
+| `/resume/assets/images/common-prayer-iphones.png` | `/images/common-prayer-iphones.png` | 301 |
+| `/assets/images/studygateway-series-author.jpg` | `/images/studygateway-series-author.jpg` | 301 |
+| `/resume/assets/images/studygateway-series-author.jpg` | `/images/studygateway-series-author.jpg` | 301 |
+| `/assets/images/shop-scan-iphones.jpg` | `/images/shop-scan-iphones.jpg` | 301 |
+| `/resume/assets/images/shop-scan-iphones.jpg` | `/images/shop-scan-iphones.jpg` | 301 |
+| `/assets/images/studygateway-sessions.jpg` | `/images/studygateway-sessions.jpg` | 301 |
+| `/resume/assets/images/studygateway-sessions.jpg` | `/images/studygateway-sessions.jpg` | 301 |
+| `/assets/images/beginners-bible-toc.jpg` | `/images/beginners-bible.jpg` | 301 |
+| `/resume/assets/images/beginners-bible-toc.jpg` | `/images/beginners-bible.jpg` | 301 |
+| `/assets/images/beginners-bible-storybook-builder.jpg` | `/images/storybook-builder.jpg` | 301 |
+| `/resume/assets/images/beginners-bible-storybook-builder.jpg` | `/images/storybook-builder.jpg` | 301 |
+| `/studygateway/*` | `/projects/studygateway/` | 301 |
+| `/resume/projects/*` | `/projects/:splat` | 301 |
 
 Every configured rule is exercised through Wrangler, with representative suffixes
 for wildcard rules. Its status, Location, and successful final response are checked.
