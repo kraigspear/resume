@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import projects from '../../data/projects.json';
+---
+<SiteLayout title="More projects — Kraig Spear" description="Additional iOS projects, earlier work, and open-source contributions by Kraig Spear.">
+  <section class="hero archive-header wrap" aria-labelledby="projects-title">
+    <p class="eyebrow">Across the years</p><h1 id="projects-title">More projects</h1>
+    <p class="archive-summary">A wider view of my work in retail, publishing, connected products, and personal apps.</p>
+    <div class="archive-links"><a class="text-link" href="/projects/klimate/">Klimate</a><a class="text-link" href="/projects/the-beginners-bible/">The Beginner’s Bible</a><a class="text-link" href="/open-source-contributions/">Open source &amp; patents</a></div>
+  </section>
+  <section class="archive-list wrap" aria-label="Additional projects">
+    {projects.map(project => <article><p class="eyebrow">{project.category}</p><h2><a href={`/projects/${project.slug}/`}>{project.title}</a></h2><p>{project.summary}</p></article>)}
+  </section>
+</SiteLayout>

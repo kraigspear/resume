@@ -1,0 +1,209 @@
+[
+  {
+    "slug": "target",
+    "title": "Target Mobile App",
+    "category": "Professional work",
+    "summary": "Native iOS development at Target.",
+    "detail": "My role is Lead iOS Engineer, contributing to native iOS development and engineering practices.",
+    "images": [],
+    "videos": []
+  },
+  {
+    "slug": "shop-scan",
+    "title": "shop & scan",
+    "category": "Historical retail work",
+    "summary": "A mobile shopping experience for scanning items while shopping at Meijer.",
+    "detail": "As iOS Lead Architect, I worked on the native iOS experience. The original project images show the shopping interface, and the archived news demonstrations below provide public product context.",
+    "images": [
+      {
+        "src": "/images/shop-scan-iphones.jpg",
+        "alt": "The original shop & scan interface displayed on iPhones.",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/images/shop-scan-shopping-list.png",
+        "alt": "Shopping List Feature",
+        "width": 1920,
+        "height": 1440
+      }
+    ],
+    "videos": [
+      {
+        "title": "WOOD TV8 launch report",
+        "description": "A public news report introducing Meijer’s mobile shopping checkout program.",
+        "embed": "https://www.youtube-nocookie.com/embed/oJ5z24tE92Q?controls=1",
+        "url": "https://www.youtube.com/watch?v=oJ5z24tE92Q",
+        "provider": "YouTube"
+      },
+      {
+        "title": "Milwaukee Journal Sentinel demonstration",
+        "description": "A public demonstration of how the shopping app works.",
+        "embed": "https://www.youtube-nocookie.com/embed/Vwf7SHeUez8?controls=1",
+        "url": "https://www.youtube.com/watch?v=Vwf7SHeUez8",
+        "provider": "YouTube"
+      },
+      {
+        "title": "News 10 Lansing launch report",
+        "description": "A public report on shop & scan arriving in area stores.",
+        "embed": "https://www.youtube-nocookie.com/embed/5BNfUsg5Bng?controls=1",
+        "url": "https://www.youtube.com/watch?v=5BNfUsg5Bng",
+        "provider": "YouTube"
+      }
+    ]
+  },
+  {
+    "slug": "team-assist",
+    "title": "Team Assist",
+    "category": "Historical enterprise work",
+    "summary": "An iOS project for Meijer store teams.",
+    "detail": "My contribution was iOS development and prototyping for a practical store-team interface.",
+    "images": [],
+    "videos": []
+  },
+  {
+    "slug": "shop-scan-status",
+    "title": "shop & scan status",
+    "category": "Historical enterprise work",
+    "summary": "A diagnostic utility developed alongside shop & scan.",
+    "detail": "I developed this Swift utility to present diagnostic information in a focused mobile interface.",
+    "images": [],
+    "videos": []
+  },
+  {
+    "slug": "mpizza",
+    "title": "mPizza",
+    "category": "Historical prototype",
+    "summary": "A proof-of-concept pizza ordering app developed at Meijer.",
+    "detail": "I contributed iOS interface and ordering functionality with other developers. This was a prototype, not a released consumer app.",
+    "images": [],
+    "videos": []
+  },
+  {
+    "slug": "amway-refreshments",
+    "title": "Amway Refreshments",
+    "category": "Historical collaboration",
+    "summary": "An iOS application developed with designer Andy Anderson.",
+    "detail": "I collaborated with Andy Anderson on a native application using Swift and Realm for local persistence.",
+    "images": [],
+    "videos": []
+  },
+  {
+    "slug": "the-purpose-driven-life",
+    "title": "The Purpose Driven Life",
+    "category": "Historical publishing work",
+    "summary": "A HarperCollins app for reading Rick Warren’s book one day at a time.",
+    "detail": "The original screens show daily readings, videos, bookmarks, and notes. I worked on iOS development during my time at HarperCollins.",
+    "images": [
+      {
+        "src": "/images/purpose-driven-life-iphones.png",
+        "alt": "Two iPhones showing The Purpose Driven Life: the Day 22 screen with Read Now, Bookmarks, and My Notes, and the Day 22 reading with a Rick Warren video above highlighted text",
+        "width": 600,
+        "height": 560
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "common-prayer",
+    "title": "Common Prayer",
+    "category": "Historical publishing work",
+    "summary": "A daily prayer app developed for HarperCollins Publishers.",
+    "detail": "Morning, midday, and evening prayers sit alongside the day’s reading and a text-size control in the original app screens.",
+    "images": [
+      {
+        "src": "/images/common-prayer-iphones.png",
+        "alt": "Two iPhones showing Common Prayer: the October 25 overview with morning, midday, and evening prayers, and that day's prayer text with a text-size slider",
+        "width": 600,
+        "height": 560
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "studygateway",
+    "title": "StudyGateway",
+    "category": "Historical publishing work",
+    "summary": "A video Bible-study app for browsing series and following session guides.",
+    "detail": "The archived screens show series discovery, author information, a session list, study-guide content, and video playback.",
+    "images": [
+      {
+        "src": "/images/studygateway-home.jpg",
+        "alt": "StudyGateway's home screen on an iPhone, with rows of study series under New Releases, Fitness, and Bestsellers",
+        "width": 1500,
+        "height": 1125
+      },
+      {
+        "src": "/images/studygateway-sessions.jpg",
+        "alt": "Three iPhones showing a series' session list, the Session 1 study guide, and a session video playing in landscape",
+        "width": 1500,
+        "height": 1125
+      },
+      {
+        "src": "/images/studygateway-series.jpg",
+        "alt": "The All In series page, with its rating, an Add to My List button, and the series description",
+        "width": 1500,
+        "height": 1125
+      },
+      {
+        "src": "/images/studygateway-author.jpg",
+        "alt": "Rick Warren's author page, with his biography and his series",
+        "width": 1500,
+        "height": 1125
+      },
+      {
+        "src": "/images/studygateway-series-author.jpg",
+        "alt": "Two iPhones showing The Daniel Plan series page and Rick Warren's author page",
+        "width": 1500,
+        "height": 1125
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "seth-godins-blog",
+    "title": "Seth Godin’s Blog",
+    "category": "Historical collaboration",
+    "summary": "An iPhone and iPad app for reading Seth Godin’s blog.",
+    "detail": "Built with designer Andy Anderson, the app presented a post list and reading view across iPhone and iPad.",
+    "images": [
+      {
+        "src": "/images/seth-godin-iphones.png",
+        "alt": "Two iPhones showing the Seth Godin app: a list of recent posts and a post open for reading",
+        "width": 600,
+        "height": 560
+      },
+      {
+        "src": "/images/seth-godin-ipad-iphone.jpg",
+        "alt": "The Seth Godin app on an iPad, with the post list beside an open post, and on an iPhone showing the post list",
+        "width": 1200,
+        "height": 900
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "fastcast",
+    "title": "FastCast",
+    "category": "Earlier personal project",
+    "summary": "An earlier personal weather app, now being reimagined as Klimate.",
+    "detail": "The original app combined current conditions, forecasts, and radar. The archived iPad demonstration is from 2014; Klimate represents the current work.",
+    "images": [
+      {
+        "src": "/images/fastcast-iphone.png",
+        "alt": "FastCast showing current conditions for Grandville, MI, forecasts for today, tonight, and Monday, and a radar map",
+        "width": 523,
+        "height": 1000
+      }
+    ],
+    "videos": [
+      {
+        "title": "FastCast on iPad (2014)",
+        "description": "An archived demonstration of the earlier weather app on iPad.",
+        "embed": "https://player.vimeo.com/video/89697871?dnt=1",
+        "url": "https://vimeo.com/89697871",
+        "provider": "Vimeo"
+      }
+    ]
+  }
+]

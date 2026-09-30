@@ -136,3 +136,11 @@ freshness workflow runs the same check without regenerating or changing files.
 There is no second PDF to maintain. `/resume/` and `/assets/resume.pdf` retain
 the existing canonical paths. Host migration and legacy GitHub-prefixed URL
 redirects remain part of the cutover ticket.
+
+## Additional projects and legacy links — KLI-80
+
+`/projects/` contains the lower-prominence archive; homepage and footer links make
+it discoverable. The featured pages retain their separate presentation. See
+[ROUTES.md](ROUTES.md) for the complete migration inventory and media decisions.
+The root production redirect file is preserved; the new build copies
+`public/_redirects` and verifies it through Wrangler in the browser suite.

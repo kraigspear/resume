@@ -159,3 +159,23 @@ figcaption { text-align: center; font-size: 10px; color: #4e5d53; letter-spacing
   .resume-header { padding-block: 28px 20px; }
   .resume-header .hero-bottom .text-link { margin-top: 8px; }
 }
+
+.more-work { padding-bottom: 32px; text-align: right; }
+.footer-links, .archive-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.archive-header { padding-block: 48px; }
+.archive-header h1 { font-size: clamp(38px, 5vw, 64px); margin-block: 20px; }
+.archive-summary { max-width: 680px; font-size: 20px; color: var(--muted); }
+.archive-detail { max-width: 720px; margin-top: 24px; color: var(--muted); }
+.archive-links { margin-top: 24px; }
+.archive-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; padding-bottom: 60px; }
+.archive-list article { border-top: 1px solid var(--line); padding-block: 28px; }
+.archive-list h2 { font-size: 23px; font-weight: 500; margin-block: 14px; }
+.archive-list article > p:last-child { color: var(--muted); font-size: 15px; }
+.archive-note { padding-bottom: 28px; color: var(--muted); font-size: 13px; }
+@media (max-width: 640px) {
+  .archive-list { grid-template-columns: 1fr; }
+  .archive-header { padding-block: 32px; }
+  .archive-summary { font-size: 18px; }
+  .site-footer { flex-wrap: wrap; }
+  .footer-links { gap: 12px 20px; }
+}

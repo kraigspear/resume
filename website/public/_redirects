@@ -1,0 +1,40 @@
+# Old Squarespace URLs on kraigspear.net, kept working after the move to Cloudflare.
+/s/Resume-2020.pdf    /assets/resume.pdf                    301
+/home                 /                                     301
+/blog                 /                                     301
+/shop-scan            /projects/shop-scan/                  301
+/team-assist          /projects/team-assist/                301
+/shop-scan-status     /projects/shop-scan-status/           301
+/mpizza               /projects/mpizza/                     301
+/amway-refreshments   /projects/amway-refreshments/         301
+/the-beginners-bible  /projects/the-beginners-bible/        301
+/seth-godins-blog     /projects/seth-godins-blog/           301
+/common-prayer        /projects/common-prayer/              301
+/purpose-drive-life   /projects/the-purpose-driven-life/    301
+/fastcast             /projects/fastcast/                   301
+/studygateway         /projects/studygateway/               301
+/studygateway/*       /projects/studygateway/               301
+
+# Trailing-slash variants of old Squarespace pages.
+/home/ / 301
+/blog/ / 301
+/shop-scan/ /projects/shop-scan/ 301
+/team-assist/ /projects/team-assist/ 301
+/shop-scan-status/ /projects/shop-scan-status/ 301
+/mpizza/ /projects/mpizza/ 301
+/amway-refreshments/ /projects/amway-refreshments/ 301
+/the-beginners-bible/ /projects/the-beginners-bible/ 301
+/seth-godins-blog/ /projects/seth-godins-blog/ 301
+/common-prayer/ /projects/common-prayer/ 301
+/purpose-drive-life/ /projects/the-purpose-driven-life/ 301
+/fastcast/ /projects/fastcast/ 301
+/studygateway/ /projects/studygateway/ 301
+
+# GitHub Pages base-path references arriving on the new host.
+/resume/projects /projects/ 301
+/resume/projects/ /projects/ 301
+/resume/projects/* /projects/:splat 301
+/resume/assets/* /assets/:splat 301
+/resume/resume /resume/ 301
+/resume/resume/ /resume/ 301
+/resume/open-source-contributions/ /open-source-contributions/ 301
