@@ -1,8 +1,10 @@
-// Cloudflare Worker that serves the built Jekyll site (_site) as static assets.
+// Production Astro assets. See website/DEPLOYMENT.md before the domain cutover.
 {
+  "$schema": "./website/node_modules/wrangler/config-schema.json",
   "name": "resume",
-  "compatibility_date": "2026-09-01",
+  "compatibility_date": "2026-09-30",
   "assets": {
-    "directory": "./_site"
+    "directory": "./website/dist",
+    "not_found_handling": "404-page"
   }
 }

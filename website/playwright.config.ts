@@ -6,5 +6,10 @@ export default defineConfig({
     { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 1000 } } },
     { name: 'mobile', use: { ...devices['iPhone 13'], defaultBrowserType: 'chromium' } },
   ],
-  webServer: { command: 'npm run build && npm run preview', url: 'http://127.0.0.1:4321', reuseExistingServer: false, timeout: 120000 },
+  webServer: {
+    command: process.env.TEST_PRODUCTION === 'true'
+      ? 'npm run build && npm run preview:production'
+      : 'npm run build:preview && npm run preview',
+    url: 'http://127.0.0.1:4321', reuseExistingServer: false, timeout: 120000,
+  },
 });

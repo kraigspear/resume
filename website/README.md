@@ -1,7 +1,7 @@
-# Portfolio preview
+# Portfolio
 
-An isolated static Astro homepage. The root Jekyll site and its production
-Cloudflare configuration remain the public site during migration.
+Static Astro portfolio for Cloudflare. See [DEPLOYMENT.md](DEPLOYMENT.md) for
+the current launch status, build settings, domain cutover, and recovery steps.
 
 ## Run locally
 
@@ -11,11 +11,11 @@ Use Node 26.4.0 (or Node >=22.19) and npm. No Ruby is required.
 cd website
 npm ci
 npm run check
-npm run build
+npm run build:preview
 npm run preview
 ```
 
-Open http://127.0.0.1:4321. Preview serves `dist/` through local Cloudflare
+Open http://127.0.0.1:4321. Preview serves `dist-preview/` through local Cloudflare
 Workers static assets using Wrangler. It needs no Cloudflare credentials and
 does not deploy anything. `npm run dev` provides Astro's editing server instead.
 
@@ -42,12 +42,16 @@ from `src/pages/` and copies explicitly selected `public/` assets. Repository
 planning docs, dependency directories, tests, and scripts are outside this
 output. The root Jekyll build excludes `website/` entirely.
 
-`wrangler.jsonc` names a separate `resume-preview` worker and has no production
-routes or domains. No hosted preview is created by these instructions. If a
-hosted preview is provisioned later, use this directory's configuration and
-`dist/`, never the root production worker. Preview responses and HTML request
-no indexing. Remove those preview restrictions deliberately during KLI-81
-production cutover. Do not change the live domain or retire GitHub Pages here.
+`website/wrangler.jsonc` names the separate `resume-preview` worker and serves
+`dist-preview/`. Preview responses and HTML request no indexing. `npm run dev`
+also emits noindex HTML. Noindex is a crawler request, not access control.
+
+`npm run build` produces indexable production files in `dist/`, with canonical
+and Open Graph URLs rooted at `https://kraigspear.net`. The root
+`../wrangler.jsonc` serves only this production directory. Use
+`npm run preview:production` to inspect it locally, and
+`TEST_PRODUCTION=true npm test` to run the same browser journeys on that build.
+Build outputs are separate so a preview build cannot overwrite production assets.
 
 The homepage links to `/projects/klimate/`; shared navigation returns to the
 homepage sections. Klimate is labeled in development. Activities and Radar
@@ -130,7 +134,7 @@ committed PDF. Review the generated PDF's content and page breaks, then commit
 `scripts/resume-pdf.sha256` together.
 
 The SHA-256 stamp covers the source, renderer, and PDF bytes in that order.
-`prebuild` and `predev` reject a stale stamp before copying the authoritative
+`prebuild`, `prebuild:preview`, and `predev` reject a stale stamp before copying the authoritative
 PDF to the ignored `public/assets/resume.pdf`. The separate GitHub Actions
 freshness workflow runs the same check without regenerating or changing files.
 There is no second PDF to maintain. `/resume/` and `/assets/resume.pdf` retain

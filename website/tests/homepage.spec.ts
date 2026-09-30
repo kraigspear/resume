@@ -7,9 +7,20 @@ test('introduces the engineer, projects, and a working contact destination', asy
   await expect(page.getByRole('link', { name: 'Get in touch', exact: true }).first()).toHaveAttribute('href', 'mailto:kraigspear@gmail.com');
 });
 
-test('keeps the preview unindexed and internal files out of public responses', async ({ request }) => {
+test('publishes canonical metadata for the intended public routes', async ({ page }) => {
+  for (const path of ['/', '/resume/', '/projects/klimate/', '/projects/the-beginners-bible/', '/projects/', '/open-source-contributions/']) {
+    await page.goto(path);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://kraigspear.net${path}`);
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', `https://kraigspear.net${path}`);
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', await page.title());
+  }
+});
+
+test('indexes only production and keeps internal files out of public responses', async ({ request }) => {
   const home = await request.get('/');
-  expect(home.headers()['x-robots-tag']).toContain('noindex');
+  const preview = process.env.TEST_PRODUCTION !== 'true';
+  expect(home.headers()['x-robots-tag']?.includes('noindex') ?? false).toBe(preview);
+  expect((await home.text()).includes('content="noindex, nofollow"')).toBe(preview);
   for (const path of ['/CONTEXT.md', '/docs/specs/portfolio-redesign.md', '/package.json', '/src/pages/index.astro', '/node_modules/astro/package.json']) {
     expect((await request.get(path)).status(), path).toBe(404);
   }
