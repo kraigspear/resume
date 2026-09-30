@@ -95,3 +95,26 @@ figcaption { text-align: center; font-size: 10px; color: #4e5d53; letter-spacing
   .about h2 br { display: none; }
   .site-footer { gap: 16px; font-size: 11px; }
 }
+
+/* Project preview: real screens first, optional engineering detail below. */
+.app-gallery { padding-bottom: 70px; }
+.app-screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 44px; background: #e5ebe4; border-radius: 4px; }
+.app-screens img { width: 100%; max-width: 270px; margin-inline: auto; border: 5px solid #252a27; border-radius: 28px; box-shadow: 0 15px 25px #24392b20; }
+.app-screens figcaption { margin-top: 25px; font-size: 12px; line-height: 1.5; }
+.app-screens figcaption strong { display: block; font-size: 15px; margin-bottom: 6px; color: var(--ink); }
+.gallery-note { font-size: 12px; color: var(--muted); margin-top: 18px; }
+.highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-bottom: 60px; }
+.highlights article { border-left: 2px solid var(--line); padding-left: 28px; }
+.highlights h3 { font-size: 27px; font-weight: 500; letter-spacing: -.6px; margin-block: 18px; }
+.highlights p:not(.eyebrow) { font-size: 15px; color: var(--muted); max-width: 460px; }
+.highlights .forthcoming-note { margin-top: 18px; }
+.project-end { border-top: 1px solid var(--line); padding-block: 25px 60px; display: flex; justify-content: space-between; gap: 24px; }
+@media (max-width: 640px) {
+  .app-gallery { padding-bottom: 48px; }
+  .app-gallery .section-heading, .engineering .section-heading { align-items: start; gap: 12px; }
+  .app-gallery .section-heading span, .engineering .section-heading span { text-align: right; max-width: 110px; }
+  .app-screens { grid-template-columns: 1fr; gap: 40px; padding: 28px; }
+  .app-screens img { max-width: 250px; }
+  .highlights { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+  .project-end { flex-wrap: wrap; padding-bottom: 30px; }
+}

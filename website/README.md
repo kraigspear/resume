@@ -1,4 +1,4 @@
-# Portfolio preview — KLI-76
+# Portfolio preview
 
 An isolated static Astro homepage. The root Jekyll site and its production
 Cloudflare configuration remain the public site during migration.
@@ -49,12 +49,26 @@ hosted preview is provisioned later, use this directory's configuration and
 no indexing. Remove those preview restrictions deliberately during KLI-81
 production cutover. Do not change the live domain or retire GitHub Pages here.
 
-Navigation links target homepage sections until the later project and resume
-pages exist. Klimate is labeled in development; no TestFlight link is implied.
+The homepage links to `/projects/klimate/`; shared navigation returns to the
+homepage sections. Klimate is labeled in development. Activities and Radar
+walkthroughs remain explicitly forthcoming, with no beta or media controls.
+Replace each engineering article with verified completed content when available.
 
 ## Images
 
-Klimate weather and Activities screenshots come from the owner's Klimate app
+Klimate weather, Activities, and Radar screenshots come from the owner's Klimate app
 (`klimate2/Website/public/*-preview.webp`). The Beginner's Bible image is the
 existing portfolio asset `assets/images/beginners-bible-toc.jpg`. These are real
 project images, copied here so the new build is self-contained.
+
+## Klimate copy evidence — KLI-77
+
+The overview was checked against the owner’s `klimate2` source on 2026-09-30:
+`ExtractionModelProviding.swift` drafts structured `ExtractedCriteria` through
+`LanguageModelSession`; criteria editor UI tests cover editing criteria;
+`HourlyActivityEvaluator.swift` evaluates saved criteria against forecast hours
+and delegates Recommendations to `RecommendationEngine`. This supports the
+limited overview, not a completed demonstration or a beta availability claim.
+The gallery uses the existing development screenshots, not newly recorded flows.
+Detailed code excerpts, performance claims, and recordings await the separate
+Activities and Radar content tickets.

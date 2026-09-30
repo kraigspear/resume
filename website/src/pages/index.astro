@@ -1,26 +1,7 @@
 ---
-import '../styles/global.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Kraig Spear is an iOS engineer building thoughtful apps, from personal weather tools to interactive storytelling." />
-    <title>Kraig Spear — iOS Engineer</title>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header wrap">
-      <a class="wordmark" href="#main" aria-label="Kraig Spear, home">Kraig Spear<span aria-hidden="true">.</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="mailto:kraigspear@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
-    <main id="main" tabindex="-1">
+<SiteLayout title="Kraig Spear — iOS Engineer" description="Kraig Spear is an iOS engineer building thoughtful apps, from personal weather tools to interactive storytelling.">
       <section class="hero wrap" aria-labelledby="intro-title">
         <p class="eyebrow">Independent thinking. Native experiences.</p>
         <h1 id="intro-title">iOS Engineer.<br /><span>Made for real life.</span></h1>
@@ -38,6 +19,7 @@ import '../styles/global.css';
             <p class="project-deck">Weather, with a reason<br />to get outside.</p>
             <p>A weather app built around what you want to do. Describe an Activity in your own words; Apple’s Foundation Models help turn it into weather criteria that Swift code can evaluate against the forecast.</p>
             <p>From creating an Activity to exploring weather radar, I’m building the experience from the app’s interface through the engineering underneath.</p>
+            <a class="text-link" href="/projects/klimate/">Explore Klimate <span aria-hidden="true">↗</span></a>
             <ul class="tags" aria-label="Klimate technologies"><li>SwiftUI</li><li>Foundation Models</li><li>Weather</li></ul>
           </div>
           <figure class="klimate-visual">
@@ -72,7 +54,4 @@ import '../styles/global.css';
           <a class="text-link" href="mailto:kraigspear@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
       </section>
-    </main>
-    <footer class="site-footer wrap"><p>Kraig Spear <span>· iOS Engineer</span></p><a href="https://github.com/kraigspear">GitHub <span aria-hidden="true">↗</span></a></footer>
-  </body>
-</html>
+</SiteLayout>

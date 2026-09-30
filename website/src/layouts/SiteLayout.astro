@@ -1,0 +1,30 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="wordmark" href="/" aria-label="Kraig Spear, home">Kraig Spear<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="mailto:kraigspear@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer wrap"><p>Kraig Spear <span>· iOS Engineer</span></p><a href="https://github.com/kraigspear">GitHub <span aria-hidden="true">↗</span></a></footer>
+  </body>
+</html>
