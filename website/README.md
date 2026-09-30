@@ -83,3 +83,20 @@ metadata and the silent audio track removed. The poster is taken at 0.5 seconds.
 The original recording is unchanged and is not included in the site. Playback
 is user-initiated, with native controls, inline mobile playback, no preload,
 and a visible text description. The engineering write-up remains deferred.
+
+## The Beginner’s Bible — KLI-78
+
+The historical case study retains `/projects/the-beginners-bible/` and uses the
+existing project account in `projects/the-beginners-bible.md` plus its two
+original images. The copy distinguishes Kraig’s 2012–2015 engineering role from
+Andy Anderson’s visual direction; it makes no current app availability promise.
+Unsupported rankings, awards, performance metrics, and ambiguous speech-to-text
+claims were not carried forward.
+
+On 2026-09-30, provider oEmbed endpoints returned the original titles and owners
+for both Zondervan YouTube videos and Kraig Spear’s Vimeo games compilation.
+Direct playback-status requests were rate-limited (YouTube) or forbidden (Vimeo),
+so playback availability is not independently certified. Lazy-loaded players
+sit in keyboard-operated disclosures with visible contextual descriptions and
+provider links. The smoke test blocks the external players deliberately and
+verifies that the page and media disclosure remain usable without them.
