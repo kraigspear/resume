@@ -22,6 +22,20 @@ Read-only discovery confirmed:
 - GitHub Pages currently builds `main` at `/` using the legacy build system,
   serving `https://kraigspear.github.io/resume/`. It remains enabled.
 
+The reviewed preview is deployed at
+`https://resume-preview.qdwct4w2sm.workers.dev`, version
+`43a58cd8-16bf-46da-9023-fd0cbba6f2df` (2026-09-30). Live checks passed for the
+six primary routes, PDF signature/download, preview noindex headers, internal
+file 404s, all 63 redirect rules and their destinations, and radar playback.
+Both preview and production builds passed all 30 desktop/mobile browser tests;
+Astro reported zero errors/warnings, production deployment dry-run and Worker
+type generation succeeded. The output inventory contains only portfolio HTML,
+CSS, selected images/video, PDF, and Cloudflare routing/header files. Desktop
+and narrow-screen resume screenshots were visually checked; earlier ticket
+reviews covered the other page layouts. Keyboard and reduced-motion browser
+checks passed. Independent standards and spec reviews found no code issues;
+the domain, remote-build switch, and Pages transition remain pending.
+
 ## Reproducible build
 
 Use Node 26.4.0 and the committed npm lockfile. From the repository root:
