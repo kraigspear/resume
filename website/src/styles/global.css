@@ -99,7 +99,7 @@ figcaption { text-align: center; font-size: 10px; color: #4e5d53; letter-spacing
 /* Project preview: real screens first, optional engineering detail below. */
 .app-gallery { padding-bottom: 70px; }
 .app-screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding: 44px; background: #e5ebe4; border-radius: 4px; }
-.app-screens img { width: 100%; max-width: 270px; margin-inline: auto; border: 5px solid #252a27; border-radius: 28px; box-shadow: 0 15px 25px #24392b20; }
+.app-screens img, .app-screens video { width: 100%; max-width: 270px; margin-inline: auto; border: 5px solid #252a27; border-radius: 28px; box-shadow: 0 15px 25px #24392b20; }
 .app-screens figcaption { margin-top: 25px; font-size: 12px; line-height: 1.5; }
 .app-screens figcaption strong { display: block; font-size: 15px; margin-bottom: 6px; color: var(--ink); }
 .gallery-note { font-size: 12px; color: var(--muted); margin-top: 18px; }
@@ -114,7 +114,9 @@ figcaption { text-align: center; font-size: 10px; color: #4e5d53; letter-spacing
   .app-gallery .section-heading, .engineering .section-heading { align-items: start; gap: 12px; }
   .app-gallery .section-heading span, .engineering .section-heading span { text-align: right; max-width: 110px; }
   .app-screens { grid-template-columns: 1fr; gap: 40px; padding: 28px; }
-  .app-screens img { max-width: 250px; }
+  .app-screens img, .app-screens video { max-width: 250px; }
   .highlights { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
   .project-end { flex-wrap: wrap; padding-bottom: 30px; }
 }
+
+.app-screens video { display: block; height: auto; background: #172320; }

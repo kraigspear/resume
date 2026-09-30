@@ -13,7 +13,7 @@ test('visitors can open Klimate and return to selected work', async ({ page }) =
 test('shows real screens and clearly forthcoming engineering material', async ({ page }, testInfo) => {
   await page.goto('/projects/klimate/');
   await expect(page.getByRole('heading', { name: 'A look inside Klimate' })).toBeVisible();
-  await expect(page.getByRole('img')).toHaveCount(3);
+  await expect(page.getByRole('img')).toHaveCount(2);
   for (const image of await page.getByRole('img').all()) {
     await image.scrollIntoViewIfNeeded();
     await expect(image).toHaveAttribute('alt', /Klimate.+/);
@@ -25,7 +25,7 @@ test('shows real screens and clearly forthcoming engineering material', async ({
     await expect(highlight.getByRole('button')).toHaveCount(0);
   }
   await expect(page.getByRole('link', { name: /TestFlight|beta|play|watch/i })).toHaveCount(0);
-  await expect(page.locator('video, iframe, pre')).toHaveCount(0);
+  await expect(page.locator('iframe, pre')).toHaveCount(0);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/projects/klimate/');
   await page.keyboard.press('Tab');
@@ -35,4 +35,19 @@ test('shows real screens and clearly forthcoming engineering material', async ({
   await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: testInfo.outputPath('klimate.png'), fullPage: true });
+});
+
+
+test('radar recording plays on demand and can be paused', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/projects/klimate/');
+  const video = page.getByLabel('Klimate Radar demonstration');
+  await expect(video).toBeVisible();
+  await expect(video).toHaveAttribute('controls', '');
+  expect(await video.evaluate((element: HTMLVideoElement) => element.paused && !element.autoplay)).toBe(true);
+  await video.evaluate((element: HTMLVideoElement) => element.play());
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.currentTime)).toBeGreaterThan(0);
+  expect(await video.evaluate((element: HTMLVideoElement) => element.duration)).toBeCloseTo(7, 0);
+  await video.evaluate((element: HTMLVideoElement) => element.pause());
+  expect(await video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
 });

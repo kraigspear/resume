@@ -51,7 +51,8 @@ production cutover. Do not change the live domain or retire GitHub Pages here.
 
 The homepage links to `/projects/klimate/`; shared navigation returns to the
 homepage sections. Klimate is labeled in development. Activities and Radar
-walkthroughs remain explicitly forthcoming, with no beta or media controls.
+engineering explanations remain forthcoming. The Radar gallery includes a real
+recording with native playback controls; no beta access is advertised.
 Replace each engineering article with verified completed content when available.
 
 ## Images
@@ -72,3 +73,13 @@ limited overview, not a completed demonstration or a beta availability claim.
 The gallery uses the existing development screenshots, not newly recorded flows.
 Detailed code excerpts, performance claims, and recordings await the separate
 Activities and Radar content tickets.
+
+## Radar recording
+
+The owner-supplied `ScreenRecording_09-30-2026 04-14-13_1.MP4` replaces the
+static Radar gallery image. The web clip keeps 0.5–7.5 seconds of the 9.07-second
+source. It is H.264 MP4, 720×1564, 30 fps, CRF 25, yuv420p, with fast-start
+metadata and the silent audio track removed. The poster is taken at 0.5 seconds.
+The original recording is unchanged and is not included in the site. Playback
+is user-initiated, with native controls, inline mobile playback, no preload,
+and a visible text description. The engineering write-up remains deferred.
