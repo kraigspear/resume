@@ -1,7 +1,28 @@
 {
-  "name": "kraig-spear-portfolio", "private": true, "type": "module",
-  "engines": { "node": ">=22.19.0" },
-  "scripts": { "dev": "astro dev", "check": "astro check", "build": "astro build", "preview": "wrangler dev --local --ip 127.0.0.1 --port 4321", "test": "playwright test" },
-  "dependencies": { "astro": "7.3.5" },
-  "devDependencies": { "@astrojs/check": "0.9.10", "@playwright/test": "1.63.0", "typescript": "6.0.2", "wrangler": "4.144.0" }
+  "name": "kraig-spear-portfolio",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "wrangler dev --local --ip 127.0.0.1 --port 4321",
+    "test": "playwright test",
+    "prebuild": "node scripts/prepare-resume.mjs",
+    "predev": "node scripts/prepare-resume.mjs",
+    "check:pdf": "node scripts/prepare-resume.mjs --check"
+  },
+  "dependencies": {
+    "astro": "7.3.5",
+    "marked": "18.0.14"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@playwright/test": "1.63.0",
+    "typescript": "6.0.2",
+    "wrangler": "4.144.0"
+  }
 }

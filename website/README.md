@@ -100,3 +100,39 @@ so playback availability is not independently certified. Lazy-loaded players
 sit in keyboard-operated disclosures with visible contextual descriptions and
 provider links. The smoke test blocks the external players deliberately and
 verifies that the page and media disclosure remain usable without them.
+
+## Resume and PDF — KLI-79
+
+`../resume.md` remains the authoritative content for the web resume and PDF.
+The Astro page imports it at build time, removes only the Jekyll front matter
+and download button, and displays the source headline as a paragraph beneath
+the page heading. Titles, employers, dates, and body content are preserved.
+
+The source now uses a concise public account. Detailed Target implementation
+claims, internal outcomes, usage/revenue/rating metrics, rankings, and regression
+improvements were omitted pending owner verification. They remain recoverable
+in Git history; do not restore them automatically. Actual employment titles and
+dates are unchanged. The source headline emphasizes hands-on iOS engineering.
+
+After any content or PDF-renderer change, from the repository root:
+
+```sh
+python3 scripts/build_resume_pdf.py
+cd website
+npm run check:pdf
+npm run build
+```
+
+PDF regeneration requires Python 3 and Chrome; set `CHROME_BIN` if Chrome is not
+at the default macOS location. The normal site build needs only Node and the
+committed PDF. Review the generated PDF's content and page breaks, then commit
+`resume.md`, `scripts/build_resume_pdf.py` (if changed), `assets/resume.pdf`, and
+`scripts/resume-pdf.sha256` together.
+
+The SHA-256 stamp covers the source, renderer, and PDF bytes in that order.
+`prebuild` and `predev` reject a stale stamp before copying the authoritative
+PDF to the ignored `public/assets/resume.pdf`. The separate GitHub Actions
+freshness workflow runs the same check without regenerating or changing files.
+There is no second PDF to maintain. `/resume/` and `/assets/resume.pdf` retain
+the existing canonical paths. Host migration and legacy GitHub-prefixed URL
+redirects remain part of the cutover ticket.

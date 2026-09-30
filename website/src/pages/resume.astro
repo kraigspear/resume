@@ -1,0 +1,19 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { marked } from 'marked';
+import source from '../../../resume.md?raw';
+// Only the Jekyll presentation wrapper is removed; all resume content comes from the root source.
+const markdown = source.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '')
+  .split('\n').filter(line => !line.startsWith('[Download Resume')).join('\n')
+  .replace(/^# (.+)$/m, '<p class="resume-headline">$1</p>');
+const content = await marked.parse(markdown);
+---
+<SiteLayout title="Resume — Kraig Spear" description="Kraig Spear’s professional experience in native iOS development, architecture, and engineering leadership.">
+  <section class="hero wrap" aria-labelledby="resume-title">
+    <p class="eyebrow">Kraig Spear</p>
+    <h1 id="resume-title">Resume</h1>
+    <div class="hero-bottom"><p>Native iOS development, supported by experience across retail, publishing, and connected products.</p><a class="text-link" href="/assets/resume.pdf" download="Kraig-Spear-Resume.pdf">Download resume (PDF) <span aria-hidden="true">↓</span></a></div>
+  </section>
+  <div class="resume-content wrap" set:html={content} />
+  <div class="project-end wrap"><a class="text-link" href="/#work">← Selected work</a><a class="text-link" href="mailto:kraigspear@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
+</SiteLayout>

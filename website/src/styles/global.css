@@ -138,3 +138,13 @@ figcaption { text-align: center; font-size: 10px; color: #4e5d53; letter-spacing
 .case-media summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .case-media iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; margin-block: 14px; background: #e5ebe4; }
 @media (max-width: 640px) { .case-image { margin-bottom: 40px; } .case-media { padding-bottom: 40px; } }
+
+.resume-content { max-width: 850px; padding-bottom: 60px; }
+.resume-content .resume-headline { font-size: 23px; font-weight: 500; letter-spacing: -.5px; margin-bottom: 8px; }
+.resume-content h2 { font-size: 13px; letter-spacing: 1.5px; border-top: 1px solid var(--line); padding-top: 28px; margin-block: 42px 24px; }
+.resume-content h3 { font-size: 21px; font-weight: 500; line-height: 1.35; margin-block: 28px 8px; }
+.resume-content p, .resume-content li { font-size: 16px; line-height: 1.65; color: var(--muted); }
+.resume-content p { margin-bottom: 14px; }
+.resume-content ul { margin-block: 12px 24px; padding-left: 22px; }
+.resume-content li { margin-bottom: 6px; }
+@media (max-width: 640px) { nav { gap: 10px; } }
