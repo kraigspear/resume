@@ -2,7 +2,7 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-const root = fileURLToPath(new URL('../dist-pages/', import.meta.url)).replace(/\/$/, '');
+const root = resolve(fileURLToPath(new URL('../dist-pages/', import.meta.url)));
 const types = { '.html': 'text/html', '.pdf': 'application/pdf', '.jpg': 'image/jpeg', '.png': 'image/png' };
 createServer(async (req, res) => {
   try {
