@@ -18,7 +18,9 @@
     "test": "playwright test",
     "prebuild": "node scripts/prepare-resume.mjs && node scripts/prepare-branding.mjs",
     "predev": "node scripts/prepare-resume.mjs && node scripts/prepare-branding.mjs",
-    "check:pdf": "node scripts/prepare-resume.mjs --check"
+    "check:pdf": "node scripts/prepare-resume.mjs --check",
+    "postbuild": "node scripts/build-pages-bridge.mjs",
+    "test:bridge": "playwright test --config playwright.bridge.config.ts"
   },
   "dependencies": {
     "astro": "7.3.5",
