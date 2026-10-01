@@ -7,6 +7,22 @@ The Astro portfolio, including the completed Radar walkthrough, is published at
 records the rollout and final live verification of automatic deployments and
 GitHub Pages forwarding. Activities and TestFlight access remain optional content.
 
+## Verified rollout — 2026-10-01
+
+[PR #12](https://github.com/kraigspear/resume/pull/12) merged as
+`b9c8ed1d3ac5894de47d460960edf81a961a65bf`. That push automatically started
+[run 36939478430](https://github.com/kraigspear/resume/actions/runs/36939478430),
+which passed 68 portfolio browser checks and 10 forwarding checks, deployed
+Cloudflare, verified the live commit, and published the GitHub Pages bridge.
+No manual deployment or workflow dispatch was needed.
+
+Live checks confirmed all 30 forwarding pages and all 16 retained PDF/image
+files match the verified build byte-for-byte, plus a real custom 404 for unknown
+paths. Browser navigation from the old GitHub homepage reaches the canonical
+portfolio. The six main production routes retain correct canonical/indexing
+metadata, the Radar video/poster retain their verified checksums, and private
+source paths remain 404.
+
 ## Automatic deployment
 
 `.github/workflows/portfolio.yml` owns both public deployments:
@@ -37,15 +53,17 @@ and `dist-preview`, while root `wrangler.jsonc` targets `resume` and `website/di
 ### Superseded Workers Builds integration
 
 The old trigger `46ac9d85-1ca0-47d7-b8d1-f5571fb1cf6d` did not enqueue builds for
-the PR #10 or PR #11 main pushes. A manual PR #11 build also remained in Ruby
+the PR #10 or PR #11 main pushes; the dashboard confirmed that the project was
+disconnected from its Git account. A manual PR #11 build also remained in Ruby
 runtime setup for more than seven minutes and was cancelled. GitHub Actions
 replaces that deployment path; the trigger is retained for recovery with all
-branches excluded (`branch_excludes: ["*"]`) to prevent competing deployments.
-Its previous branch exclusions were empty.
+build-watch paths excluded (`path_excludes: ["*"]`) to prevent competing
+deployments. Its previous path exclusions were empty. The exclusion was verified
+through the API.
 
 Historical settings: root `website`, build `npm ci && npm run build`, deploy
 `npx wrangler deploy --config ../wrangler.jsonc`, `NODE_VERSION=26.4.0`, and
-`SKIP_DEPENDENCY_INSTALL=true`. Restoring the old branch exclusions does not
+`SKIP_DEPENDENCY_INSTALL=true`. Restoring the old path exclusions does not
 prove that its GitHub integration works. Keep it excluded during normal operation.
 
 ## GitHub Pages inbound-link transition
