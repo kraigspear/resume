@@ -1,0 +1,34 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import projects from '../../data/projects.json';
+export function getStaticPaths() {
+  return projects.map(project => ({ params: { slug: project.slug }, props: { project } }));
+}
+const { project } = Astro.props;
+---
+<SiteLayout title={`${project.title} — Kraig Spear`} description={project.summary}>
+  <section class="hero archive-header wrap" aria-labelledby="project-title">
+    <a class="text-link" href="/projects/">Back to all projects <span aria-hidden="true">↗</span></a>
+    <p class="eyebrow">{project.category}</p>
+    <h1 id="project-title">{project.title}</h1>
+    <p class="archive-summary">{project.summary}</p>
+    <p class="archive-detail">{project.detail}</p>
+    {project.slug === 'fastcast' && <a class="text-link" href="/projects/klimate/">Explore Klimate <span aria-hidden="true">↗</span></a>}
+  </section>
+  {project.images.map(image => <figure class="case-image wrap">
+    <img {...image} loading="lazy" />
+    <figcaption>{image.alt}</figcaption>
+  </figure>)}
+  {project.videos.length > 0 && <section class="case-media wrap" aria-labelledby="archive-media-title">
+    <div class="section-heading"><h2 id="archive-media-title">Archived demonstrations</h2><span>Original product context</span></div>
+    {project.videos.map(video => <article>
+      <h3>{video.title}</h3><p>{video.description}</p>
+      <details><summary>Watch {video.title}</summary>
+        <iframe src={video.embed} title={video.title} loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <p><a href={video.url}>Open on {video.provider}</a></p>
+      </details>
+    </article>)}
+  </section>}
+  <div class="archive-note wrap"><p>These notes document my work at the time. They do not imply current app availability or device compatibility.</p></div>
+  <div class="project-end wrap"><a class="text-link" href="/resume/">View resume <span aria-hidden="true">↗</span></a><a class="text-link" href="mailto:kraigspear@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
+</SiteLayout>

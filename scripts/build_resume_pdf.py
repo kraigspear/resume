@@ -5,6 +5,8 @@ resume.md is the source of truth. Site-only lines (front matter, the download
 button, the inline-styled subtitle) are dropped or translated so the PDF reads
 as a standalone document.
 """
+import hashlib
+import os
 import html
 import re
 import subprocess
@@ -15,10 +17,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "resume.md"
 OUTPUT = ROOT / "assets" / "resume.pdf"
-CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+CHROME = os.environ.get("CHROME_BIN", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 
 NAME = "Kraig Spear"
-CONTACT = "kraigspear@gmail.com · github.com/kraigspear · kraigspear.github.io/resume"
+CONTACT = "kraigspear@gmail.com · github.com/kraigspear · kraigspear.net"
 
 CSS = """
 @page { size: Letter; margin: 0.5in 0.6in; }
@@ -95,6 +97,11 @@ def main() -> None:
          f"--print-to-pdf={OUTPUT}", f"file://{tmp.name}"],
         check=True, capture_output=True,
     )
+    digest = hashlib.sha256()
+    for path in [SOURCE, Path(__file__), OUTPUT]:
+        digest.update(path.read_bytes())
+    (ROOT / "scripts" / "resume-pdf.sha256").write_text(digest.hexdigest() + "\n")
+    Path(tmp.name).unlink(missing_ok=True)
     print(f"wrote {OUTPUT} ({OUTPUT.stat().st_size} bytes)", file=sys.stderr)
 
 

@@ -1,0 +1,6 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "resume-preview",
+  "compatibility_date": "2026-09-30",
+  "assets": { "directory": "./dist-preview", "not_found_handling": "404-page" }
+}
