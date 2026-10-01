@@ -3,9 +3,9 @@
 ## Launch status — 2026-10-01
 
 [RES-6](https://linear.app/klimate/issue/RES-6/cut-over-the-verified-portfolio-to-cloudflare)
-is **in progress**. The Astro portfolio is merged and deployed to the production
-Worker. Custom-domain verification and the GitHub Pages forwarding transition
-remain open. Keep existing hosting until `https://kraigspear.net` is verified.
+is **in progress**. The Astro portfolio is live and verified at
+`https://kraigspear.net`. The remaining launch work is the GitHub Pages forwarding
+transition and verification that the next `main` push triggers an automatic build.
 
 [PR #10](https://github.com/kraigspear/resume/pull/10) merged to `main` as
 `3e2396e7dcf7d05e737ef99b9535dbc276c7ea23`. Workers Builds deployed that exact
@@ -13,19 +13,43 @@ commit to `https://resume.qdwct4w2sm.workers.dev`, version
 `5679a949-ccb0-4307-8bbe-dac749e2f6ce`, in build
 `96d26af7-cbde-44d5-ac48-dc68db7bc7c5`.
 
-Verification passed on all six primary production routes: `/`, `/resume/`,
+Custom-domain verification passed on all six primary production routes: `/`, `/resume/`,
 `/projects/klimate/`, `/projects/the-beginners-bible/`, `/projects/`, and
 `/open-source-contributions/`. Canonical and sharing metadata use the production
 domain, with no preview noindex directives. The portrait, icons, sharing card,
-and PDF respond correctly; `/CONTEXT.md` returns 404. Post-merge GitHub checks
-passed all 32 desktop/mobile tests in each build mode (64 total), and the
-existing GitHub Pages build/deployment succeeded.
+and PDF respond correctly; internal source and planning paths return 404.
+All 63 legacy redirects and their destinations passed live checks. HTTP apex,
+HTTP www, and HTTPS www redirect to the HTTPS apex, preserving paths and query
+strings; TLS validation succeeds. Post-merge GitHub checks passed all 32
+desktop/mobile tests in each build mode (64 total), and the existing GitHub
+Pages build/deployment succeeded.
 
-The last domain discovery, on September 30, found `kraigspear.net` redirecting
-to `www.kraigspear.net` on Squarespace, with Squarespace/NS1 nameservers. The
-available Cloudflare token exposed only the `spearware.net` zone. No DNS or
-GitHub Pages source settings were changed during the October 1 deployment.
-Recheck access and DNS before cutover; these observations are not a DNS backup.
+### Domain routing — verified October 1, 3:18 PM EDT
+
+Cloudflare zone `09e90b783e3afd06395639fbff8bfb07` is active, using
+`carol.ns.cloudflare.com` and `theo.ns.cloudflare.com`.
+
+- `kraigspear.net` is a Custom Domain on production Worker `resume`, attachment
+  `f90c11173c67a9e161ca21c078e97cd99d171b50`. Cloudflare manages its DNS and TLS.
+- `www` is a proxied CNAME to `kraigspear.net`. Single Redirect
+  `86127168a1f442d6ad586db3eab78de1`, named **Redirect www to kraigspear.net**,
+  matches `(http.host eq "www.kraigspear.net")` and returns a 301 to
+  `concat("https://kraigspear.net", http.request.uri.path)`, with **Preserve
+  query string** enabled.
+- **Always Use HTTPS** is enabled. The preexisting DNS-only wildcard CNAME to
+  `ext-sq.squarespace.com` remains unchanged.
+
+Before replacing the Squarespace apex A record, the complete dashboard list of
+three records was captured in the owner's local
+`Downloads/kraigspear-net-dns-before-cutover-2026-10-01.json`. This is a
+reconstructed record backup, not a BIND export. The token can manage Workers
+but lacks DNS/ruleset access; those edits used the signed-in dashboard.
+The domain switch did not deploy a new Worker version or change GitHub Pages.
+
+The Radar walkthrough is complete in [PR #11](https://github.com/kraigspear/resume/pull/11)
+and available in the separate preview. At this verification, production still
+serves the merged PR #10 version above; the Radar release awaits PR #11's merge
+and deployment.
 
 ### Current Workers Builds settings
 
@@ -95,29 +119,19 @@ from `website/`. It builds `dist-preview/` and deploys `resume-preview`.
 The response header covers all preview assets, including the PDF, and the HTML
 also requests no indexing. This is not a private or authenticated site.
 
-## Complete the cutover
+## Remaining launch work
 
-1. Obtain domain-management access. Add/activate `kraigspear.net` in the intended
-   Cloudflare account if needed. Before a nameserver migration, export and retain
-   the complete existing DNS zone, including mail and verification records.
-   The apex/www observations above are not a complete DNS backup.
-2. Preserve the old Squarespace site and the rollback Worker versions below.
-   Recheck the current production Worker. If source has changed since the verified
-   deployment, deploy the reviewed build with `npm run deploy` from `website/`
-   and verify its workers.dev routes, PDF, images, and video before attaching the domain.
-3. Connect the active Cloudflare zone to the `resume` Worker using Custom Domains.
-   Make the apex canonical and redirect `www` to the apex while preserving paths
-   and query strings. Check TLS and DNS propagation before declaring success.
-4. Verify on the actual domain: homepage, both featured projects, additional
-   projects, resume download, email destination, all rules in `public/_redirects`,
-   retained media, 404 responses for internal files, canonical metadata, and
-   absence of preview noindex directives. Record the deployed version and results.
-5. Confirm the next `main` push starts an automatic Astro build using the current
+1. Confirm the next `main` push starts an automatic Astro build using the current
    settings above, and verify the deployed commit and version. Manual deployment
-   success alone does not prove the repository webhook is working.
-6. Only after custom-domain verification, replace the GitHub Pages full site
-   with a forwarding bridge as described below. Record its outcome, then close
-   RES-6. Missing Activities/Radar write-ups and TestFlight access do not block it.
+   success alone does not prove the repository webhook is working. After the
+   Radar release, verify the walkthrough and new media on the custom domain.
+2. Replace the GitHub Pages full site with the forwarding bridge described below,
+   now that the custom domain is verified. Record its public verification and
+   the automatic-build outcome, then close RES-6.
+
+The unfinished Activities walkthrough and TestFlight access do not block launch.
+Keep the existing Squarespace site and the recovery information below available
+while the migration stabilizes.
 
 ## GitHub Pages inbound-link transition
 
@@ -137,8 +151,9 @@ that branch only after checking the generated bridge, then verify the public
 GitHub URLs. This retires the duplicate portfolio while retaining a forwarding
 service; do not describe it as disabling Pages entirely.
 
-**Outcome so far:** transition not applied; original Pages settings preserved
-because custom-domain verification is not yet possible.
+**Outcome so far:** transition not applied. GitHub Pages still uses `main`,
+path `/`, with the legacy build system. Custom-domain verification is complete;
+the forwarding bridge is the remaining hosting transition.
 
 ## Recovery
 
@@ -160,10 +175,20 @@ npx wrangler rollback 6484d10d-3cda-4c2e-a498-bdd285d9616b --name resume
 ```
 
 Pause automatic builds while diagnosing a failed cutover so they cannot replace
-the rollback. Verify the restored Worker routes and PDF. To undo the domain
-move, restore the separately exported DNS records/nameservers and keep the old
-Squarespace subscription/site active until the migration is stable. DNS changes
-are not instantaneous. To undo the future GitHub forwarding bridge, restore
+the rollback. Verify the restored Worker routes and PDF.
+
+To return the domain to Squarespace, use the local record backup noted above:
+
+1. Disable **Redirect www to kraigspear.net**.
+2. Remove the `kraigspear.net` Custom Domain attachment from Worker `resume`.
+3. Restore the apex A record to `198.49.23.144` and the www CNAME to
+   `ext-sq.squarespace.com`, both DNS-only with automatic TTL. The wildcard
+   CNAME already retains its original value.
+4. To restore the previous zone settings too, set **Always Use HTTPS** to off.
+
+Cloudflare nameservers can remain in place for this DNS-only recovery. Keep the
+old Squarespace site active until the migration is stable; DNS changes are not
+instantaneous. To undo the future GitHub forwarding bridge, restore
 Pages source to `main`, path `/`, legacy build (and the saved pre-transition
 source commit if `main` has since changed).
 
