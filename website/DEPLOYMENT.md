@@ -1,57 +1,77 @@
 # Portfolio deployment and recovery
 
-## Launch status — 2026-09-30
+## Launch status — 2026-10-01
 
-KLI-81 is **in progress**, not a completed domain cutover. The production build
-is prepared on `update-profile-photo`. Do not retire existing hosting until the
-replacement is verified at `https://kraigspear.net`.
+[RES-6](https://linear.app/klimate/issue/RES-6/cut-over-the-verified-portfolio-to-cloudflare)
+is **in progress**. The Astro portfolio is merged and deployed to the production
+Worker. Custom-domain verification and the GitHub Pages forwarding transition
+remain open. Keep existing hosting until `https://kraigspear.net` is verified.
 
-Read-only discovery confirmed:
+[PR #10](https://github.com/kraigspear/resume/pull/10) merged to `main` as
+`3e2396e7dcf7d05e737ef99b9535dbc276c7ea23`. Workers Builds deployed that exact
+commit to `https://resume.qdwct4w2sm.workers.dev`, version
+`5679a949-ccb0-4307-8bbe-dac749e2f6ce`, in build
+`96d26af7-cbde-44d5-ac48-dc68db7bc7c5`.
 
-- `kraigspear.net` redirects to `www.kraigspear.net`; both still use Squarespace.
-  The apex resolves to `198.49.23.144` and www to `ext-sq.squarespace.com`.
-  Authoritative nameservers are Squarespace/NS1, not Cloudflare.
-- The available Cloudflare token exposes only the `spearware.net` zone.
-  No `kraigspear.net` zone or Worker custom-domain binding is accessible.
-- Account `5449f2872bd04938eca8148dd1706c83` has the existing `resume` Worker
-  at `resume.qdwct4w2sm.workers.dev`. Its previous deployment is preserved.
-- Its current Workers Builds trigger `46ac9d85-1ca0-47d7-b8d1-f5571fb1cf6d`
-  builds `main` at repository root with
-  `LC_ALL=C.UTF-8 bundle exec jekyll build --config _config.yml,_config.cloudflare.yml`,
-  then `npx wrangler deploy`. These remote settings have **not** changed.
-- GitHub Pages currently builds `main` at `/` using the legacy build system,
-  serving `https://kraigspear.github.io/resume/`. It remains enabled.
+Verification passed on all six primary production routes: `/`, `/resume/`,
+`/projects/klimate/`, `/projects/the-beginners-bible/`, `/projects/`, and
+`/open-source-contributions/`. Canonical and sharing metadata use the production
+domain, with no preview noindex directives. The portrait, icons, sharing card,
+and PDF respond correctly; `/CONTEXT.md` returns 404. Post-merge GitHub checks
+passed all 32 desktop/mobile tests in each build mode (64 total), and the
+existing GitHub Pages build/deployment succeeded.
 
-The reviewed preview is deployed at
-`https://resume-preview.qdwct4w2sm.workers.dev`, version
-`43a58cd8-16bf-46da-9023-fd0cbba6f2df` (2026-09-30). Live checks passed for the
-six primary routes, PDF signature/download, preview noindex headers, internal
-file 404s, all 63 redirect rules and their destinations, and radar playback.
-Both preview and production builds passed all 30 desktop/mobile browser tests;
-Astro reported zero errors/warnings, production deployment dry-run and Worker
-type generation succeeded. The output inventory contains only portfolio HTML,
-CSS, selected images/video, PDF, and Cloudflare routing/header files. Desktop
-and narrow-screen resume screenshots were visually checked; earlier ticket
-reviews covered the other page layouts. Keyboard and reduced-motion browser
-checks passed. Independent standards and spec reviews found no code issues;
-the domain, remote-build switch, and Pages transition remain pending.
+The last domain discovery, on September 30, found `kraigspear.net` redirecting
+to `www.kraigspear.net` on Squarespace, with Squarespace/NS1 nameservers. The
+available Cloudflare token exposed only the `spearware.net` zone. No DNS or
+GitHub Pages source settings were changed during the October 1 deployment.
+Recheck access and DNS before cutover; these observations are not a DNS backup.
 
-## Reproducible build
+### Current Workers Builds settings
 
-### Preview update — 2026-10-01 (RES-10)
+Account: `5449f2872bd04938eca8148dd1706c83`. Production Worker: `resume`.
+Trigger: `46ac9d85-1ca0-47d7-b8d1-f5571fb1cf6d`.
 
-The latest preview at `https://resume-preview.qdwct4w2sm.workers.dev` is version
-`2d5f6462-27bd-4bec-a29c-4c4a5bc09b50`. It adds the owner-supplied About portrait,
-a KS favicon and Apple touch icon, and a 1200×630 social sharing card. Preview
-image metadata uses the Worker origin; production uses `https://kraigspear.net`.
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Root directory | `website` |
+| Build command | `npm ci && npm run build` |
+| Deploy command | `npx wrangler deploy --config ../wrangler.jsonc` |
+| `NODE_VERSION` | `26.4.0` |
+| `SKIP_DEPENDENCY_INSTALL` | `true` |
+
+Both variables are plain build configuration. The explicit `npm ci` replaces
+automatic dependency installation. The deploy command must select the
+repository-root Wrangler config: `website/wrangler.jsonc` targets the separate
+preview Worker.
+
+Cloudflare still detects the repository-root `.ruby-version` during runtime
+setup, even with `website` as the build root. The verified build spent about
+five minutes installing Ruby before running the Node build/deploy commands.
+Changing the build root does not remove that setup overhead.
+
+The verification build was started manually for the merged SHA because the
+merge webhook had not queued a build when checked. This confirms the build
+configuration and deployed source; the next push must still confirm automatic
+triggering. An earlier verification build,
+`67a634dc-99d5-4bcf-87c6-ae8f4b21280d`, was cancelled during runtime setup.
+
+### Preview baseline — RES-10
+
+The sharing-polish preview at `https://resume-preview.qdwct4w2sm.workers.dev` is
+version `2d5f6462-27bd-4bec-a29c-4c4a5bc09b50`. It adds the owner-supplied About
+portrait, a KS favicon and Apple touch icon, and a 1200×630 social sharing card.
+Preview image metadata uses the Worker origin; production uses the custom domain.
 
 Astro reported zero errors/warnings. All 32 desktop/mobile tests passed in each
-of preview and production mode (64 total). Live verification confirmed sharing
-metadata and noindex on the six primary routes; all four portrait sizes, the
-sharing card, and three icons matched the tested build byte-for-byte and served
-with image content types. The new GitHub Actions workflow runs both build modes
-and retains browser reports, screenshots, and failure traces. Production hosting,
-domain settings, and the existing remote build trigger are unchanged.
+mode. Live checks confirmed sharing metadata and noindex on the six primary
+routes; four portrait sizes, the card, and three icons matched the tested build
+byte-for-byte with image content types. GitHub Actions retains browser reports,
+screenshots, and failure traces. Earlier checks covered all 63 legacy redirects,
+Radar playback, keyboard navigation, reduced motion, and the output inventory.
+
+## Reproducible build
 
 ### Build commands
 
@@ -81,9 +101,10 @@ also requests no indexing. This is not a private or authenticated site.
    Cloudflare account if needed. Before a nameserver migration, export and retain
    the complete existing DNS zone, including mail and verification records.
    The apex/www observations above are not a complete DNS backup.
-2. Preserve the old Squarespace site and the rollback Worker version below.
-   Deploy the reviewed production build with `npm run deploy` from `website/`.
-   Verify its workers.dev routes, PDF, images, and video before attaching the domain.
+2. Preserve the old Squarespace site and the rollback Worker versions below.
+   Recheck the current production Worker. If source has changed since the verified
+   deployment, deploy the reviewed build with `npm run deploy` from `website/`
+   and verify its workers.dev routes, PDF, images, and video before attaching the domain.
 3. Connect the active Cloudflare zone to the `resume` Worker using Custom Domains.
    Make the apex canonical and redirect `www` to the apex while preserving paths
    and query strings. Check TLS and DNS propagation before declaring success.
@@ -91,16 +112,12 @@ also requests no indexing. This is not a private or authenticated site.
    projects, resume download, email destination, all rules in `public/_redirects`,
    retained media, 404 responses for internal files, canonical metadata, and
    absence of preview noindex directives. Record the deployed version and results.
-5. Coordinate the source release to `main` with the Workers Builds switch. Keep
-   repository root `/`, set build command to
-   `npm ci --prefix website && npm run build --prefix website`, and deploy command
-   to `cd website && npx wrangler deploy --config ../wrangler.jsonc`. Set Node
-   version to `26.4.0`. Do not run that trigger on the old Jekyll-only source.
-   Confirm the first automatic Astro deployment succeeds. Retire the old Jekyll
-   build command at that point; local Ruby need not be removed.
+5. Confirm the next `main` push starts an automatic Astro build using the current
+   settings above, and verify the deployed commit and version. Manual deployment
+   success alone does not prove the repository webhook is working.
 6. Only after custom-domain verification, replace the GitHub Pages full site
    with a forwarding bridge as described below. Record its outcome, then close
-   KLI-81. Missing Activities/Radar write-ups and TestFlight access do not block it.
+   RES-6. Missing Activities/Radar write-ups and TestFlight access do not block it.
 
 ## GitHub Pages inbound-link transition
 
@@ -124,6 +141,14 @@ service; do not describe it as disabling Pages entirely.
 because custom-domain verification is not yet possible.
 
 ## Recovery
+
+The first verified Astro production version is
+`5679a949-ccb0-4307-8bbe-dac749e2f6ce` (2026-10-01). Use it to recover from a
+later portfolio regression. From `website/`, with authorized Cloudflare credentials:
+
+```sh
+npx wrangler rollback 5679a949-ccb0-4307-8bbe-dac749e2f6ce --name resume
+```
 
 Before this migration, `resume` served version
 `6484d10d-3cda-4c2e-a498-bdd285d9616b` at 100%, deployed 2026-09-27 10:56 UTC.

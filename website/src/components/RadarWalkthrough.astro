@@ -1,0 +1,100 @@
+---
+const pinningExcerpt = `let settledCount = settledGrids.count
+let isComplete = settledCount == visibleGrids.count
+let pinnedFrameID = renderer.pinnedFrameID
+let nothingPinned = pinnedFrameID == nil
+let extendsCurrentPartialPin = pinnedFrameID == frame.id && settledCount > 0
+guard isComplete || (nothingPinned && settledCount > 0) || extendsCurrentPartialPin else { return }`;
+---
+<section class="radar-story wrap" id="radar-engineering" aria-labelledby="radar-story-title">
+  <div class="section-heading"><h2 id="radar-story-title">Inside Radar</h2><span>Swift · MapKit · RadarKit</span></div>
+  <div class="story-intro">
+    <p class="eyebrow">Rendering over time</p>
+    <div>
+      <h3>Keeping radar readable as time advances.</h3>
+      <p>Radar animation has two jobs: show precipitation moving, and keep the map readable while the next image loads. I built RadarKit, the Swift package behind Klimate’s radar, around that handoff.</p>
+      <p>The <a href="#radar-caption">recording above</a> shows the map and timeline in use. Here is how the renderer prepares and retains the images behind that experience.</p>
+    </div>
+  </div>
+
+  <figure class="radar-flow" aria-labelledby="radar-flow-caption">
+    <figcaption id="radar-flow-caption">From a radar frame to pixels on the map</figcaption>
+    <ol>
+      <li><span class="step" aria-hidden="true">01</span><strong>Fetch grids</strong><span>Download NOAA image regions for a timestamp.</span></li>
+      <li><span class="step" aria-hidden="true">02</span><strong>Decode & reuse</strong><span>Share decoded images through a cache with a byte budget.</span></li>
+      <li><span class="step" aria-hidden="true">03</span><strong>Prepare the frame</strong><span>Check that the visible grids are decoded or known empty.</span></li>
+      <li><span class="step" aria-hidden="true">04</span><strong>Draw on MapKit</strong><span>Swap the retained image set and redraw the overlay.</span></li>
+    </ol>
+    <p>The displayed frame stays retained while its replacement is prepared. The first frame can fill in progressively.</p>
+  </figure>
+
+  <div class="radar-decisions">
+    <article aria-labelledby="radar-rendering-title">
+      <p class="eyebrow">01 / Rendering</p>
+      <h3 id="radar-rendering-title">Reuse the decoded image.</h3>
+      <p>Inside the contiguous US grid coverage, the direct renderer draws shared <code>CGImage</code> objects into MapKit. That avoids cropping each map tile, encoding it as PNG, and having MapKit decode it again.</p>
+      <p>Geography and memory still matter. The renderer can combine grids with tiles at the coverage boundary, or use tiles alone outside it and when the decoded working set will not fit.</p>
+    </article>
+    <article aria-labelledby="radar-retention-title">
+      <p class="eyebrow">02 / Frame retention</p>
+      <h3 id="radar-retention-title">Keep the current frame visible.</h3>
+      <p>The first frame paints as grids arrive, then fills the remaining regions. For a different timestamp, the direct renderer keeps the previous frame until every required visible grid is decoded or confirmed empty. It then swaps the image set atomically.</p>
+      <p>An empty grid is a valid result: the new frame must clear precipitation that was visible at the previous timestamp. A failed download cannot be treated as clear sky.</p>
+    </article>
+    <article aria-labelledby="radar-memory-title">
+      <p class="eyebrow">03 / Caching & memory</p>
+      <h3 id="radar-memory-title">Budget for what stays on screen.</h3>
+      <p>Raw grid PNGs, decoded grids, and fallback tiles have separate cache budgets. The displayed frame holds strong references to its decoded images, so eviction from <code>NSCache</code> does not remove the pixels it needs to draw.</p>
+      <p>Those retained images count against the decoded-image budget. Lookahead is limited by the remaining capacity; if a complete working set cannot fit, the renderer falls back to tiles. Retention improves continuity, but it costs memory that cannot also be spent preparing future frames.</p>
+    </article>
+  </div>
+
+  <details class="radar-code">
+    <summary>Read the Swift frame-selection rule</summary>
+    <p>This excerpt from <code>tryPinDesiredFrame()</code> permits a first partial paint and additions to the same timestamp. A different timestamp needs complete visible coverage before it can replace the current frame.</p>
+    <pre tabindex="0" aria-label="Swift frame-selection excerpt"><code>{pinningExcerpt}</code></pre>
+    <p class="source-note">Source: my RadarKit 0.9.0 implementation, <code>DirectGridRendererController.swift</code>. The surrounding method collects decoded and known-empty grids before this check, then merges or replaces the retained frame.</p>
+  </details>
+</section>
+
+<style>
+  .radar-story { padding-bottom: 72px; scroll-margin-top: 24px; }
+  .story-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 70px; padding-block: 20px 42px; }
+  .story-intro h3 { font-size: clamp(29px, 3vw, 40px); font-weight: 500; line-height: 1.2; letter-spacing: -.04em; max-width: 630px; }
+  .story-intro p:not(.eyebrow) { color: var(--muted); font-size: 16px; max-width: 650px; margin-top: 20px; }
+  .radar-flow { padding: 30px; background: #e5ebe4; border-radius: 4px; }
+  .radar-flow figcaption { text-align: left; font-size: 13px; color: var(--ink); letter-spacing: 0; }
+  .radar-flow ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 38px; list-style: none; margin: 28px 0; padding: 0; }
+  .radar-flow li { position: relative; padding-top: 15px; border-top: 1px solid #aebcae; }
+  .radar-flow li:not(:last-child)::after { content: '→'; position: absolute; right: -27px; top: 46px; color: var(--accent); }
+  .step { display: block; color: var(--accent); font-size: 11px; margin-bottom: 12px; }
+  .radar-flow strong { display: block; font-size: 17px; font-weight: 550; margin-bottom: 10px; }
+  .radar-flow li > span:last-child, .radar-flow p { font-size: 13px; line-height: 1.6; color: #4e5d53; }
+  .radar-flow p { border-top: 1px solid #aebcae; padding-top: 20px; }
+  .radar-decisions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding-block: 44px; }
+  .radar-decisions h3 { font-size: 23px; font-weight: 500; line-height: 1.25; letter-spacing: -.5px; margin-block: 16px; }
+  .radar-decisions p:not(.eyebrow) { color: var(--muted); font-size: 15px; margin-top: 16px; }
+  code { font-size: .9em; }
+  .radar-code { border-block: 1px solid var(--line); padding-block: 6px; }
+  summary { padding-block: 18px; font-size: 15px; cursor: pointer; }
+  summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+  .radar-code p { font-size: 15px; color: var(--muted); max-width: 760px; margin-block: 12px 24px; }
+  pre { padding: 24px; background: #e5ebe4; border-radius: 4px; overflow-x: auto; font-size: 13px; line-height: 1.8; }
+  .radar-code .source-note { font-size: 12px; overflow-wrap: anywhere; }
+  @media (max-width: 900px) {
+    .story-intro { gap: 32px; }
+    .radar-decisions { grid-template-columns: 1fr; gap: 28px; max-width: 720px; }
+    .radar-flow ol { grid-template-columns: 1fr 1fr; }
+    .radar-flow li:nth-child(2)::after { content: none; }
+  }
+  @media (max-width: 640px) {
+    .radar-story { padding-bottom: 48px; }
+    .section-heading { gap: 16px; align-items: start; }
+    .section-heading span { max-width: 140px; text-align: right; line-height: 1.6; }
+    .story-intro { grid-template-columns: 1fr; gap: 18px; padding-top: 0; }
+    .radar-flow { padding: 24px; }
+    .radar-flow ol { grid-template-columns: 1fr; gap: 36px; }
+    .radar-flow li:not(:last-child)::after { content: '↓'; right: auto; top: auto; bottom: -29px; left: 0; }
+    pre { padding: 16px; }
+  }
+</style>

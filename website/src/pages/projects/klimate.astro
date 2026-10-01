@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import RadarWalkthrough from '../../components/RadarWalkthrough.astro';
 ---
 <SiteLayout title="Klimate — Kraig Spear" description="A development preview of Klimate, Kraig Spear’s weather app for planning time outside.">
   <section class="hero wrap" aria-labelledby="klimate-title">
@@ -20,11 +21,11 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
         <figcaption><strong>Activities</strong>Weather criteria for the things you enjoy.</figcaption>
       </figure>
       <figure>
-        <video controls playsinline preload="none" poster="/images/klimate-radar-poster.jpg" width="720" height="1564" aria-label="Klimate Radar demonstration" aria-describedby="radar-caption">
+        <video controls playsinline preload="none" poster="/images/klimate-radar-poster.jpg" width="720" height="1566" aria-label="Klimate Radar demonstration" aria-describedby="radar-caption">
           <source src="/videos/klimate-radar.mp4" type="video/mp4" />
           Your browser does not support embedded video. <a href="/videos/klimate-radar.mp4">Download the Radar demonstration</a>.
         </video>
-        <figcaption id="radar-caption"><strong>Radar</strong>Precipitation animates over Michigan as the timeline advances and the map controls expand. Seven-second recording, no audio.</figcaption>
+        <figcaption id="radar-caption"><strong>Radar</strong>Precipitation animates over Michigan as the timeline advances and the map controls expand. Twelve-second simulator recording, no audio.</figcaption>
       </figure>
     </div>
     <p class="gallery-note">Screens from the app in development. The interface may change before release.</p>
@@ -39,7 +40,7 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
     </div>
   </section>
   <section class="engineering wrap" aria-labelledby="engineering-title">
-    <div class="section-heading"><h2 id="engineering-title">Engineering notes</h2><span>A closer look, forthcoming</span></div>
+    <div class="section-heading"><h2 id="engineering-title">Engineering notes</h2><span>Behind the interface</span></div>
     <div class="highlights">
       <article aria-labelledby="activities-title">
         <p class="eyebrow">Walkthrough forthcoming</p>
@@ -48,12 +49,13 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
         <p class="forthcoming-note">The detailed explanation and recorded walkthrough are being prepared.</p>
       </article>
       <article aria-labelledby="radar-title">
-        <p class="eyebrow">Walkthrough forthcoming</p>
+        <p class="eyebrow">Inside the implementation</p>
         <h3 id="radar-title">Radar</h3>
-        <p>A closer look at presenting weather radar over time and the engineering decisions behind the map experience.</p>
-        <p class="forthcoming-note">The recording above shows the app in motion. A detailed engineering explanation is forthcoming.</p>
+        <p>How decoded images, frame retention, and a shared memory budget keep radar readable as the timeline advances.</p>
+        <a class="text-link" href="#radar-engineering">Read the Radar walkthrough <span aria-hidden="true">↓</span></a>
       </article>
     </div>
   </section>
+  <RadarWalkthrough />
   <div class="project-end wrap"><a class="text-link" href="/#work">← Back to selected work</a><a class="text-link" href="mailto:kraigspear@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
 </SiteLayout>
