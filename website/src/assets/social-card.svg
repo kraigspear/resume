@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8f7f3" />
+  <rect x="0" y="0" width="12" height="630" fill="#385d4a" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="80" y="104" fill="#222b29" font-size="32" font-weight="700" letter-spacing="-1">Kraig Spear<tspan fill="#385d4a">.</tspan></text>
+    <text x="80" y="265" fill="#222b29" font-size="88" font-weight="500" letter-spacing="-5">iOS Engineer.</text>
+    <text x="80" y="365" fill="#5f6762" font-size="88" font-weight="500" letter-spacing="-5">Made for real life.</text>
+    <text x="84" y="427" fill="#5f6762" font-size="25">Thoughtful apps for Apple platforms.</text>
+    <path d="M80 507h1040" stroke="#d9ddd5" />
+    <text x="80" y="560" fill="#385d4a" font-size="23">kraigspear.net</text>
+    <text x="1120" y="560" fill="#5f6762" font-size="16" text-anchor="end" letter-spacing="2">SELECTED WORK &amp; EXPERIENCE</text>
+  </g>
+</svg>

@@ -35,6 +35,14 @@ The browser suite builds the site and starts its own Cloudflare preview on port
 4321; stop any existing preview first. Tests run in desktop and mobile Chromium.
 Screenshots for visual review are saved under `test-results/`.
 
+The `Portfolio checks` GitHub Actions workflow runs on pull requests, pushes to
+`main`, and manual dispatch. It uses `website/.node-version`, installs the locked
+dependencies and Chromium, then runs Astro checks and the full desktop/mobile
+browser suite separately for preview and production. Playwright builds each mode
+and serves it locally through Wrangler; CI needs no Cloudflare credentials.
+Reports, failure traces, and screenshots are retained for 14 days. The existing
+PDF freshness workflow remains separate.
+
 ## Migration boundary
 
 Only `website/dist/` is publishable for the new site. Astro builds page routes
@@ -60,6 +68,20 @@ recording with native playback controls; no beta access is advertised.
 Replace each engineering article with verified completed content when available.
 
 ## Images
+
+The About section uses the owner-supplied portrait in `src/assets/kraig-spear.png`.
+Astro generates responsive WebP versions at build time; the original PNG is
+kept as the source and is not copied to the public output.
+
+`src/assets/social-card.svg` is the editable source for the 1200×630 sharing
+card. `public/favicon.svg` contains the KS monogram as paths. The build and dev
+hooks run `scripts/prepare-branding.mjs` to generate the PNG card, 32px favicon,
+and 180px Apple touch icon; these generated files are ignored by Git. Run that
+script directly to preview asset changes without building the whole site.
+Shared Open Graph and Twitter card metadata uses each page’s title/description.
+Production images point at `kraigspear.net`; preview images point at the preview
+Worker so they are available before domain cutover. Canonical URLs remain on
+the production domain and preview responses remain noindex.
 
 Klimate weather, Activities, and Radar screenshots come from the owner's Klimate app
 (`klimate2/Website/public/*-preview.webp`). The Beginner's Bible image is the

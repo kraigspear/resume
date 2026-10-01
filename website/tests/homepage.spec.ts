@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import sharp from 'sharp';
 
 test('introduces the engineer, projects, and a working contact destination', async ({ page }) => {
   await page.goto('/');
@@ -8,11 +9,38 @@ test('introduces the engineer, projects, and a working contact destination', asy
 });
 
 test('publishes canonical metadata for the intended public routes', async ({ page }) => {
+  const imageOrigin = process.env.TEST_PRODUCTION === 'true'
+    ? 'https://kraigspear.net'
+    : 'https://resume-preview.qdwct4w2sm.workers.dev';
   for (const path of ['/', '/resume/', '/projects/klimate/', '/projects/the-beginners-bible/', '/projects/', '/open-source-contributions/']) {
     await page.goto(path);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://kraigspear.net${path}`);
     await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', `https://kraigspear.net${path}`);
     await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', await page.title());
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', `${imageOrigin}/images/social-card.png`);
+    await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute('content', /Kraig Spear/);
+    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
+    await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute('content', await page.title());
+    await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute('content', `${imageOrigin}/images/social-card.png`);
+  }
+});
+
+test('serves the sharing card and site icons as correctly sized images', async ({ page, request }) => {
+  await page.goto('/');
+  const assets = [
+    { selector: 'meta[property="og:image"]', attribute: 'content', type: 'image/png', width: 1200, height: 630 },
+    { selector: 'link[rel="icon"][type="image/svg+xml"]', attribute: 'href', type: 'image/svg+xml', width: 64, height: 64 },
+    { selector: 'link[rel="icon"][type="image/png"]', attribute: 'href', type: 'image/png', width: 32, height: 32 },
+    { selector: 'link[rel="apple-touch-icon"]', attribute: 'href', type: 'image/png', width: 180, height: 180 },
+  ];
+  for (const asset of assets) {
+    const url = await page.locator(asset.selector).getAttribute(asset.attribute);
+    expect(url).toBeTruthy();
+    // Test the current build's asset, including before production domain cutover.
+    const response = await request.get(new URL(url!, page.url()).pathname);
+    expect(response.status()).toBe(200);
+    expect(response.headers()['content-type']).toContain(asset.type);
+    expect(await sharp(await response.body()).metadata()).toMatchObject({ width: asset.width, height: asset.height });
   }
 });
 

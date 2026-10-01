@@ -6,3 +6,6 @@ dist-preview/
 test-results/
 playwright-report/
 public/assets/resume.pdf
+public/images/social-card.png
+public/favicon-32.png
+public/apple-touch-icon.png

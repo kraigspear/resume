@@ -38,6 +38,23 @@ the domain, remote-build switch, and Pages transition remain pending.
 
 ## Reproducible build
 
+### Preview update — 2026-10-01 (RES-10)
+
+The latest preview at `https://resume-preview.qdwct4w2sm.workers.dev` is version
+`2d5f6462-27bd-4bec-a29c-4c4a5bc09b50`. It adds the owner-supplied About portrait,
+a KS favicon and Apple touch icon, and a 1200×630 social sharing card. Preview
+image metadata uses the Worker origin; production uses `https://kraigspear.net`.
+
+Astro reported zero errors/warnings. All 32 desktop/mobile tests passed in each
+of preview and production mode (64 total). Live verification confirmed sharing
+metadata and noindex on the six primary routes; all four portrait sizes, the
+sharing card, and three icons matched the tested build byte-for-byte and served
+with image content types. The new GitHub Actions workflow runs both build modes
+and retains browser reports, screenshots, and failure traces. Production hosting,
+domain settings, and the existing remote build trigger are unchanged.
+
+### Build commands
+
 Use Node 26.4.0 and the committed npm lockfile. From the repository root:
 
 ```sh

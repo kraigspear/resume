@@ -54,6 +54,7 @@ figcaption { text-align: center; font-size: 10px; color: #4e5d53; letter-spacing
 .bible-visual img { border-radius: 2px; }
 .bible-visual figcaption { padding-top: 18px; }
 .about { display: grid; grid-template-columns: 1fr 2fr; gap: 70px; border-top: 1px solid var(--line); padding-block: 80px 100px; }
+.profile-photo { width: 100%; max-width: 320px; margin-top: 24px; border-radius: 4px; }
 .about h2 { font-size: clamp(29px, 3vw, 40px); font-weight: 500; line-height: 1.2; letter-spacing: -.04em; margin-bottom: 25px; }
 .about p:not(.eyebrow) { font-size: 16px; color: var(--muted); max-width: 600px; margin-bottom: 18px; }
 .site-footer { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-block: 30px; font-size: 12px; }
@@ -92,6 +93,7 @@ figcaption { text-align: center; font-size: 10px; color: #4e5d53; letter-spacing
   .bible .project-copy { grid-row: 1; }
   .bible-visual { padding: 16px; }
   .about { grid-template-columns: 1fr; gap: 22px; padding-block: 48px; }
+  .profile-photo { max-width: 240px; }
   .about h2 br { display: none; }
   .site-footer { gap: 16px; font-size: 11px; }
 }
