@@ -132,4 +132,5 @@ the new route data, then crawl internal links and image/video/PDF targets.
 - The existing patent reference remains unchanged. There are no App Store download
   controls for historical apps whose current availability has not been verified.
 
-Production hostname cutover, GitHub Pages retirement, and deployment remain KLI-81.
+Production hostname cutover and the GitHub Pages forwarding transition are tracked
+in RES-6. See `DEPLOYMENT.md` for the automated deployment and recovery procedures.

@@ -1,28 +1,98 @@
 # Portfolio deployment and recovery
 
-## Launch status — 2026-10-01
+## Launch status
 
-[RES-6](https://linear.app/klimate/issue/RES-6/cut-over-the-verified-portfolio-to-cloudflare)
-is **in progress**. The Astro portfolio is live and verified at
-`https://kraigspear.net`. The remaining launch work is the GitHub Pages forwarding
-transition and verification that the next `main` push triggers an automatic build.
+The Astro portfolio, including the completed Radar walkthrough, is published at
+`https://kraigspear.net`. [RES-6](https://linear.app/klimate/issue/RES-6/cut-over-the-verified-portfolio-to-cloudflare)
+records the rollout and final live verification of automatic deployments and
+GitHub Pages forwarding. Activities and TestFlight access remain optional content.
 
-[PR #10](https://github.com/kraigspear/resume/pull/10) merged to `main` as
-`3e2396e7dcf7d05e737ef99b9535dbc276c7ea23`. Workers Builds deployed that exact
-commit to `https://resume.qdwct4w2sm.workers.dev`, version
-`5679a949-ccb0-4307-8bbe-dac749e2f6ce`, in build
-`96d26af7-cbde-44d5-ac48-dc68db7bc7c5`.
+## Automatic deployment
 
-Custom-domain verification passed on all six primary production routes: `/`, `/resume/`,
-`/projects/klimate/`, `/projects/the-beginners-bible/`, `/projects/`, and
-`/open-source-contributions/`. Canonical and sharing metadata use the production
-domain, with no preview noindex directives. The portrait, icons, sharing card,
-and PDF respond correctly; internal source and planning paths return 404.
-All 63 legacy redirects and their destinations passed live checks. HTTP apex,
-HTTP www, and HTTPS www redirect to the HTTPS apex, preserving paths and query
-strings; TLS validation succeeds. Post-merge GitHub checks passed all 32
-desktop/mobile tests in each build mode (64 total), and the existing GitHub
-Pages build/deployment succeeded.
+`.github/workflows/portfolio.yml` owns both public deployments:
+
+1. Pull requests and `main` pushes build and test both preview and production.
+   The production job also tests the generated GitHub Pages bridge.
+2. Only a successful run on `main` may enter the `cloudflare-production`
+   environment. It downloads the exact production assets from that run, installs
+   the committed Wrangler version, and deploys with the root `wrangler.jsonc`.
+   Pull requests never run deployment jobs or receive the deployment credential.
+3. A stale-run guard compares the run's commit with current `main`. Production
+   runs are serialized; a newer push does not interrupt an in-flight deployment.
+4. `/release.json` must report the run's commit before GitHub Pages is updated.
+5. `actions/deploy-pages` publishes the forwarding artifact to the `github-pages`
+   environment. GitHub Pages uses the **GitHub Actions** source (`build_type: workflow`).
+
+The `cloudflare-production` environment permits only the `main` branch. It holds
+an encrypted `CLOUDFLARE_API_TOKEN` secret and the plain `CLOUDFLARE_ACCOUNT_ID`
+variable (`5449f2872bd04938eca8148dd1706c83`). Credentials are supplied only to
+Wrangler's deploy step. `github-pages` also permits deployment from `main`.
+A manual workflow dispatch from current `main` uses the same checks and artifacts.
+
+All jobs use Node from `website/.node-version`, the npm lockfile, and Ubuntu 24.04.
+No Ruby or Jekyll installation participates in either deployment. Preview and
+production remain separate: `website/wrangler.jsonc` targets `resume-preview`
+and `dist-preview`, while root `wrangler.jsonc` targets `resume` and `website/dist`.
+
+### Superseded Workers Builds integration
+
+The old trigger `46ac9d85-1ca0-47d7-b8d1-f5571fb1cf6d` did not enqueue builds for
+the PR #10 or PR #11 main pushes. A manual PR #11 build also remained in Ruby
+runtime setup for more than seven minutes and was cancelled. GitHub Actions
+replaces that deployment path; the trigger is retained for recovery with all
+branches excluded (`branch_excludes: ["*"]`) to prevent competing deployments.
+Its previous branch exclusions were empty.
+
+Historical settings: root `website`, build `npm ci && npm run build`, deploy
+`npx wrangler deploy --config ../wrangler.jsonc`, `NODE_VERSION=26.4.0`, and
+`SKIP_DEPENDENCY_INSTALL=true`. Restoring the old branch exclusions does not
+prove that its GitHub integration works. Keep it excluded during normal operation.
+
+## GitHub Pages inbound-link transition
+
+`npm run build` generates `website/dist-pages/` after the production Astro build.
+The generator uses the actual production routes and explicit legacy redirect
+inventory. It creates 30 forwarding pages, 16 retained PDF/image files,
+and an honest 404. The old root `/resume/` forwards to the new homepage `/`;
+`/resume/resume/` forwards to the new résumé page `/resume/`.
+
+Each forwarding page has its exact production canonical URL, a zero-delay meta
+refresh, and a visible destination link. JavaScript preserves query strings and
+fragments; no-JavaScript visitors still get the meta refresh and link. Unknown
+paths stay 404 rather than automatically forwarding to the homepage. Retained
+PDF and image paths serve byte-identical binary files. Withheld Target media,
+the previous avatar, source files, and internal planning documents are excluded.
+
+The bridge is published as an Actions artifact, rather than the previously
+proposed dedicated `gh-pages` branch, so current PDF/media are rebuilt and checked
+with each release without another writable Git credential or generated commits.
+This retires the duplicate Jekyll portfolio while retaining inbound links.
+Cloudflare cannot issue HTTP redirects for the GitHub-owned hostname; these are
+HTML forwarding pages, not server-side 301 responses.
+
+## Reproducible checks and builds
+
+From `website/`, using the committed Node version:
+
+```sh
+npm ci
+npm run check
+npm test
+TEST_PRODUCTION=true npm test
+npm run test:bridge
+npx wrangler deploy --config ../wrangler.jsonc --dry-run
+```
+
+There are 34 browser checks in each portfolio mode and 10 forwarding checks
+across desktop/mobile. The forwarding tests cover every retained project route,
+the home/résumé distinction, queries/fragments, JavaScript-disabled navigation,
+binary integrity and MIME types, excluded files, and unknown-path 404s.
+The separate resume PDF freshness check remains part of pull-request CI.
+
+Only `website/dist/` is deployable Cloudflare production content; only
+`website/dist-pages/` is deployable GitHub forwarding content. Build artifacts,
+source, tests, and this guide are not public assets. Preview deployment remains
+`npm run deploy:preview` from `website/`; its headers and HTML request no indexing.
 
 ### Domain routing — verified October 1, 3:18 PM EDT
 
@@ -46,136 +116,31 @@ reconstructed record backup, not a BIND export. The token can manage Workers
 but lacks DNS/ruleset access; those edits used the signed-in dashboard.
 The domain switch did not deploy a new Worker version or change GitHub Pages.
 
-The Radar walkthrough is complete in [PR #11](https://github.com/kraigspear/resume/pull/11)
-and available in the separate preview. At this verification, production still
-serves the merged PR #10 version above; the Radar release awaits PR #11's merge
-and deployment.
-
-### Current Workers Builds settings
-
-Account: `5449f2872bd04938eca8148dd1706c83`. Production Worker: `resume`.
-Trigger: `46ac9d85-1ca0-47d7-b8d1-f5571fb1cf6d`.
-
-| Setting | Value |
-| --- | --- |
-| Production branch | `main` |
-| Root directory | `website` |
-| Build command | `npm ci && npm run build` |
-| Deploy command | `npx wrangler deploy --config ../wrangler.jsonc` |
-| `NODE_VERSION` | `26.4.0` |
-| `SKIP_DEPENDENCY_INSTALL` | `true` |
-
-Both variables are plain build configuration. The explicit `npm ci` replaces
-automatic dependency installation. The deploy command must select the
-repository-root Wrangler config: `website/wrangler.jsonc` targets the separate
-preview Worker.
-
-Cloudflare still detects the repository-root `.ruby-version` during runtime
-setup, even with `website` as the build root. The verified build spent about
-five minutes installing Ruby before running the Node build/deploy commands.
-Changing the build root does not remove that setup overhead.
-
-The verification build was started manually for the merged SHA because the
-merge webhook had not queued a build when checked. This confirms the build
-configuration and deployed source; the next push must still confirm automatic
-triggering. An earlier verification build,
-`67a634dc-99d5-4bcf-87c6-ae8f4b21280d`, was cancelled during runtime setup.
-
-### Preview baseline — RES-10
-
-The sharing-polish preview at `https://resume-preview.qdwct4w2sm.workers.dev` is
-version `2d5f6462-27bd-4bec-a29c-4c4a5bc09b50`. It adds the owner-supplied About
-portrait, a KS favicon and Apple touch icon, and a 1200×630 social sharing card.
-Preview image metadata uses the Worker origin; production uses the custom domain.
-
-Astro reported zero errors/warnings. All 32 desktop/mobile tests passed in each
-mode. Live checks confirmed sharing metadata and noindex on the six primary
-routes; four portrait sizes, the card, and three icons matched the tested build
-byte-for-byte with image content types. GitHub Actions retains browser reports,
-screenshots, and failure traces. Earlier checks covered all 63 legacy redirects,
-Radar playback, keyboard navigation, reduced motion, and the output inventory.
-
-## Reproducible build
-
-### Build commands
-
-Use Node 26.4.0 and the committed npm lockfile. From the repository root:
-
-```sh
-npm ci --prefix website
-npm run check --prefix website
-npm run build --prefix website
-cd website
-TEST_PRODUCTION=true npm test
-npx wrangler deploy --config ../wrangler.jsonc --dry-run
-```
-
-Only `website/dist/` is deployable production content. The build copies the
-verified PDF and selected public assets; no repository-root publish or Jekyll
-build is involved. Canonical and Open Graph URLs use `https://kraigspear.net`.
-
-For a separate nonindexed Cloudflare preview, run `npm run deploy:preview`
-from `website/`. It builds `dist-preview/` and deploys `resume-preview`.
-The response header covers all preview assets, including the PDF, and the HTML
-also requests no indexing. This is not a private or authenticated site.
-
-## Remaining launch work
-
-1. Confirm the next `main` push starts an automatic Astro build using the current
-   settings above, and verify the deployed commit and version. Manual deployment
-   success alone does not prove the repository webhook is working. After the
-   Radar release, verify the walkthrough and new media on the custom domain.
-2. Replace the GitHub Pages full site with the forwarding bridge described below,
-   now that the custom domain is verified. Record its public verification and
-   the automatic-build outcome, then close RES-6.
-
-The unfinished Activities walkthrough and TestFlight access do not block launch.
-Keep the existing Squarespace site and the recovery information below available
-while the migration stabilizes.
-
-## GitHub Pages inbound-link transition
-
-Cloudflare cannot redirect the `github.io` hostname. Keep a small static bridge
-on a dedicated `gh-pages` branch, containing `.nojekyll` and forwarding pages
-for `/resume/`, `/resume/resume/`, `/resume/projects/`, every retained project,
-and `/resume/open-source-contributions/`. Each page should have its exact
-`https://kraigspear.net` canonical URL, a meta refresh, and a visible destination
-link. Map the GitHub project root `/resume/` to the new homepage `/`; it is
-different from the new resume page `/resume/`.
-
-Preserve actual PDF and retained image bytes at their old GitHub asset paths;
-an HTML redirect masquerading as a `.pdf` or image is not reliable. Include an
-honest 404 page linking to the new homepage for unknown paths. Use `ROUTES.md`
-and the old site's route inventory when producing the bridge. Point Pages at
-that branch only after checking the generated bridge, then verify the public
-GitHub URLs. This retires the duplicate portfolio while retaining a forwarding
-service; do not describe it as disabling Pages entirely.
-
-**Outcome so far:** transition not applied. GitHub Pages still uses `main`,
-path `/`, with the legacy build system. Custom-domain verification is complete;
-the forwarding bridge is the remaining hosting transition.
-
 ## Recovery
 
+Disable the **Portfolio checks** workflow before rolling back so an in-flight
+or later run cannot replace the recovered version. Cancel any running deployment
+job and keep the old Workers Builds trigger excluded. Restore the workflow only
+after the source regression is repaired or reverted.
+
+The verified pre-automation Radar release is Worker version
+`1fb966f1-93b3-4d77-9a82-46174d9fd678` from merged commit
+`1ef9a1fa7bc04291c875c0a084c1fcbe9af39d26`. It was published from an isolated
+clean source export on October 1, 2026. From `website/`:
+
+```sh
+npx wrangler rollback 1fb966f1-93b3-4d77-9a82-46174d9fd678 --name resume
+```
+
 The first verified Astro production version is
-`5679a949-ccb0-4307-8bbe-dac749e2f6ce` (2026-10-01). Use it to recover from a
-later portfolio regression. From `website/`, with authorized Cloudflare credentials:
+`5679a949-ccb0-4307-8bbe-dac749e2f6ce` (PR #10). The older pre-Astro Worker version
+is `6484d10d-3cda-4c2e-a498-bdd285d9616b`; it does not restore Squarespace.
 
-```sh
-npx wrangler rollback 5679a949-ccb0-4307-8bbe-dac749e2f6ce --name resume
-```
-
-Before this migration, `resume` served version
-`6484d10d-3cda-4c2e-a498-bdd285d9616b` at 100%, deployed 2026-09-27 10:56 UTC.
-This restores the previous Cloudflare Worker, not the external Squarespace site.
-From `website/`, with authorized Cloudflare credentials:
-
-```sh
-npx wrangler rollback 6484d10d-3cda-4c2e-a498-bdd285d9616b --name resume
-```
-
-Pause automatic builds while diagnosing a failed cutover so they cannot replace
-the rollback. Verify the restored Worker routes and PDF.
+To recover the old GitHub Pages full site, restore Pages to `build_type: legacy`,
+source `main`, path `/`. The pre-transition main commit is
+`1ef9a1fa7bc04291c875c0a084c1fcbe9af39d26`; if the root Jekyll files change later,
+restore that source into a separate recovery branch and select it instead.
+The forwarding workflow must stay disabled during this recovery.
 
 To return the domain to Squarespace, use the local record backup noted above:
 
@@ -188,9 +153,8 @@ To return the domain to Squarespace, use the local record backup noted above:
 
 Cloudflare nameservers can remain in place for this DNS-only recovery. Keep the
 old Squarespace site active until the migration is stable; DNS changes are not
-instantaneous. To undo the future GitHub forwarding bridge, restore
-Pages source to `main`, path `/`, legacy build (and the saved pre-transition
-source commit if `main` has since changed).
+instantaneous.
 
-Deployment mechanics follow the official [Workers Builds API reference](https://developers.cloudflare.com/workers/ci-cd/builds/api-reference/)
-and [Wrangler commands](https://developers.cloudflare.com/workers/wrangler/commands/).
+Implementation references: [Cloudflare GitHub Actions deployment](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/),
+[GitHub Pages deployment action](https://github.com/actions/deploy-pages), and
+[GitHub Pages API](https://docs.github.com/en/rest/pages/pages).

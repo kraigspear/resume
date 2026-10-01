@@ -9,3 +9,6 @@ public/assets/resume.pdf
 public/images/social-card.png
 public/favicon-32.png
 public/apple-touch-icon.png
+dist-pages/
+test-results-bridge/
+playwright-report-bridge/

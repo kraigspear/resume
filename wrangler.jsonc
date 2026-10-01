@@ -1,4 +1,4 @@
-// Production Astro assets. See website/DEPLOYMENT.md before the domain cutover.
+// Production Astro assets. Deployment and recovery: website/DEPLOYMENT.md.
 {
   "$schema": "./website/node_modules/wrangler/config-schema.json",
   "name": "resume",
