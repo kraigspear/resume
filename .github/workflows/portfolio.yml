@@ -62,7 +62,7 @@ jobs:
           retention-days: 7
       - name: Save forwarding pages
         if: matrix.build == 'production'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: website/dist-pages/
       - name: Save browser reports and screenshots
