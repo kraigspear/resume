@@ -1,22 +1,32 @@
 # Kraig Spear - Resume & Portfolio
 
-> **View the site:** [kraigspear.github.io/resume](https://kraigspear.github.io/resume)
+> **View the site:** [kraigspear.net](https://kraigspear.net)
 
-Jekyll + GitHub Pages portfolio site (Minimal Mistakes theme). Deploys from `main`.
+Static Astro portfolio served by Cloudflare Workers. Production builds use `main`.
 
 - [`resume.md`](resume.md) — the resume (source of truth for the PDF at `assets/resume.pdf`)
-- [`projects.md`](projects.md) and [`projects/`](projects/) — project pages
-- [`_config.yml`](_config.yml) — site settings and author profile
+- [`website/README.md`](website/README.md) — local development, checks, and content maintenance
+- [`website/src/pages/`](website/src/pages/) — Astro page routes
+- [`website/DEPLOYMENT.md`](website/DEPLOYMENT.md) — current deployment settings, verification, and recovery
 
 ## Cloudflare (kraigspear.net)
 
-The site is moving from Squarespace to a Cloudflare Worker that serves the built site as static assets. GitHub Pages keeps serving `kraigspear.github.io/resume` until the domain switches.
+The production `resume` Worker serves `website/dist/` through the repository-root
+[`wrangler.jsonc`](wrangler.jsonc). The custom domain is live and verified;
+`www.kraigspear.net` redirects to the HTTPS apex with paths and query strings preserved.
 
-Workers Builds settings:
+Workers Builds runs from `website`, using `npm ci && npm run build`, followed by
+`npx wrangler deploy --config ../wrangler.jsonc`. Use the
+[deployment guide](website/DEPLOYMENT.md#current-workers-builds-settings) as the
+source of truth for build variables, production versus preview configuration,
+and recovery. The separate preview Worker uses `website/wrangler.jsonc` and
+`website/dist-preview/`.
 
-- **Build command:** `LC_ALL=C.UTF-8 bundle exec jekyll build --config _config.yml,_config.cloudflare.yml`
-  (the build image has no UTF-8 locale, and the theme's Sass fails without one; Cloudflare runs `bundle install` before this)
-- **Deploy command:** `npx wrangler deploy`
-- **Preview command:** `npx wrangler preview`
+## Legacy GitHub Pages
 
-[`wrangler.jsonc`](wrangler.jsonc) points the Worker at `_site`. [`_config.cloudflare.yml`](_config.cloudflare.yml) serves the site from the domain root and publishes [`_redirects`](_redirects), which keeps old Squarespace URLs working. [`Gemfile`](Gemfile) and [`.ruby-version`](.ruby-version) pin the build to the GitHub Pages gem set.
+The older Jekyll site still builds from `main` at `/` and serves
+[`kraigspear.github.io/resume`](https://kraigspear.github.io/resume/).
+Its forwarding transition is pending, as recorded in the
+[deployment guide](website/DEPLOYMENT.md#github-pages-inbound-link-transition).
+The root `Gemfile`, `.ruby-version`, `_config.yml`, and original project Markdown
+support that legacy site; Cloudflare's portfolio build uses Astro.

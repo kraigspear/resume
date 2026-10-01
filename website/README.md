@@ -62,10 +62,11 @@ and Open Graph URLs rooted at `https://kraigspear.net`. The root
 Build outputs are separate so a preview build cannot overwrite production assets.
 
 The homepage links to `/projects/klimate/`; shared navigation returns to the
-homepage sections. Klimate is labeled in development. Activities and Radar
-engineering explanations remain forthcoming. The Radar gallery includes a real
-recording with native playback controls; no beta access is advertised.
-Replace each engineering article with verified completed content when available.
+homepage sections. Klimate is labeled in development. The Radar engineering
+walkthrough explains direct rendering, progressive first coverage, frame retention,
+and memory trade-offs, with a responsive diagram and a keyboard-accessible Swift
+excerpt. Activities remain forthcoming; no beta access is advertised.
+See [Radar evidence](RADAR.md) for the verified source revision and media provenance.
 
 ## Images
 
@@ -96,19 +97,28 @@ The overview was checked against the owner’s `klimate2` source on 2026-09-30:
 `HourlyActivityEvaluator.swift` evaluates saved criteria against forecast hours
 and delegates Recommendations to `RecommendationEngine`. This supports the
 limited overview, not a completed demonstration or a beta availability claim.
-The gallery uses the existing development screenshots, not newly recorded flows.
-Detailed code excerpts, performance claims, and recordings await the separate
-Activities and Radar content tickets.
+The Weather and Activities images use existing development screenshots.
+The Radar implementation has a separate source audit in [RADAR.md](RADAR.md).
+The Activities walkthrough remains deferred; the site makes no quantitative
+performance claims.
 
 ## Radar recording
 
-The owner-supplied `ScreenRecording_09-30-2026 04-14-13_1.MP4` replaces the
-static Radar gallery image. The web clip keeps 0.5–7.5 seconds of the 9.07-second
-source. It is H.264 MP4, 720×1564, 30 fps, CRF 25, yuv420p, with fast-start
-metadata and the silent audio track removed. The poster is taken at 0.5 seconds.
-The original recording is unchanged and is not included in the site. Playback
-is user-initiated, with native controls, inline mobile playback, no preload,
-and a visible text description. The engineering write-up remains deferred.
+The gallery uses a fresh recording captured on October 1 from a verified Klimate
+build with RadarKit 0.9.0. The iPhone 17 simulator runs the normal app and live
+NOAA provider, centered on Caledonia, Michigan. The clip shows precipitation
+animation, the advancing timeline, and expansion of the map controls.
+
+The 12-second web clip keeps seconds 7–19 of the 25.20-second simulator capture.
+It is H.264 MP4, 720×1566, 30 fps, CRF 25, yuv420p, with fast-start metadata and
+no audio. The poster is the first frame of the web clip. Playback is initiated
+by the visitor, with native controls, inline mobile playback, no preload, and
+a visible text description. Source revisions, capture checksums, and the media
+commands are recorded in [RADAR.md](RADAR.md).
+
+This supersedes the owner's September 30 clip because the installed dependency
+revision of that earlier recording could not be confirmed. The original
+owner-supplied file has not been changed.
 
 ## The Beginner’s Bible — KLI-78
 
