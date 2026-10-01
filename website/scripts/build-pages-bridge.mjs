@@ -1,5 +1,5 @@
 import { mkdir, readFile, readdir, rm, copyFile, writeFile } from 'node:fs/promises';
-import { join, dirname, relative } from 'node:path';
+import { join, dirname, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const website = fileURLToPath(new URL('../', import.meta.url));
@@ -21,7 +21,7 @@ async function htmlFiles(directory) {
 
 // Derive destinations from the actual production output, never from the old base URL.
 for (const file of await htmlFiles(production)) {
-  const path = '/' + relative(production, file).replace(/index\.html$/, '');
+  const path = '/' + relative(production, file).split(sep).join('/').replace(/index\.html$/, '');
   const html = await readFile(file, 'utf8');
   if (!html.includes(`href="${origin}${path}"`)) throw new Error(`Missing canonical: ${path}`);
   pages.set(path, path);
