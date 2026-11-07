@@ -21,3 +21,4 @@ vendor/
 
 # Local Cloudflare production preview state
 .wrangler/
+.claude/settings.local.json
